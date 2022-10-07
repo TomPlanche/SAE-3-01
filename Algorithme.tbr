@@ -2,12 +2,12 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algorithme</nom>
-  <date_creation>6/10/2022 09:40</date_creation>
+  <date_creation>7/10/2022 11:16</date_creation>
   <Elements>
     <Action>
       <Position>992;79</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>Arbre ontologique (Dictionnaire),
+      <PreAssertion>ontologie (Dictionnaire),
 Banque de question (XML/JSON)</PreAssertion>
       <PostAssertion>QCM dynamique</PostAssertion>
       <Titre>QCM dynamique
@@ -28,7 +28,7 @@ Banque de question (XML/JSON)</PreAssertion>
               <Position>14;286</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>Banque de question,
-Arbre ontologique</PreAssertion>
+ontologie</PreAssertion>
               <PostAssertion>questionsQCM []</PostAssertion>
               <Titre>Creer la liste des questions utiles pour le QCM</Titre>
               <DetailsVisible>1</DetailsVisible>
@@ -48,7 +48,18 @@ Arbre ontologique</PreAssertion>
                       <operationsLogiques>
                         <operation>
                           <Titre>questionQCM[i].tag in tagsUtilisables[]</Titre>
-                          <Enfants/>
+                          <Enfants>
+                            <Action>
+                              <Position>173;521</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Ajoute a la liste des questions utilisables</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                          </Enfants>
                         </operation>
                         <operation>
                           <Titre>Sinon</Titre>
@@ -70,33 +81,44 @@ Arbre ontologique</PreAssertion>
               <DetailsVideVisible>0</DetailsVideVisible>
               <Enfants>
                 <Action>
-                  <Position>526;373</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>Arbre ontologique</PreAssertion>
+                  <Position>587;371</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>ontologie</PreAssertion>
                   <PostAssertion>tagsUtilsables []</PostAssertion>
                   <Titre>Cherche le premier pré-requis</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>1</DetailsVideVisible>
-                  <Enfants/>
+                  <Enfants>
+                    <Action>
+                      <Position>696;442</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>tagsUtilisables = ontologie.prerequis[0]</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
                 </Action>
                 <Action>
-                  <Position>1084;372</Position>
+                  <Position>922;372</Position>
                   <StyleLien>2</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
+                  <PreAssertion>tagsUtilsables []</PreAssertion>
+                  <PostAssertion>questionsUtilisables []</PostAssertion>
                   <Titre>Creer la liste des questions utilisable</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>1</DetailsVideVisible>
                   <Enfants>
                     <Iteration>
-                      <Position>1221.5;444.5</Position>
+                      <Position>1168.5;443.5</Position>
                       <StyleLien>1</StyleLien>
                       <Titre>i allant de 0 a questionQCM[].length
 -1</Titre>
                       <IterationFixe>1</IterationFixe>
                       <Enfants>
                         <Condition>
-                          <Position>1142.5;535</Position>
+                          <Position>1089.5;534</Position>
                           <StyleLien>1</StyleLien>
                           <estUnique>1</estUnique>
                           <operationsLogiques>
@@ -104,7 +126,7 @@ Arbre ontologique</PreAssertion>
                               <Titre>questionQCM[i].tag in tagsUtilisables[]</Titre>
                               <Enfants>
                                 <Action>
-                                  <Position>1124;598</Position>
+                                  <Position>1052;608</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -130,7 +152,7 @@ Arbre ontologique</PreAssertion>
           </Enfants>
         </Action>
         <Action>
-          <Position>1836;181</Position>
+          <Position>2664;164</Position>
           <StyleLien>2</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -139,62 +161,95 @@ Arbre ontologique</PreAssertion>
           <DetailsVideVisible>0</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>1452;292</Position>
+              <Position>1678;289</Position>
               <StyleLien>2</StyleLien>
-              <PreAssertion>Liste de question
-Arbre ontologique</PreAssertion>
-              <PostAssertion>?</PostAssertion>
+              <PreAssertion>questionsUtilisables []</PreAssertion>
+              <PostAssertion>questionActuelle</PostAssertion>
               <Titre>Premiere question</Titre>
               <DetailsVisible>1</DetailsVisible>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants>
                 <Action>
-                  <Position>1529;400</Position>
-                  <StyleLien>2</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Récupère la premiere question</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>1</DetailsVideVisible>
-                  <Enfants>
-                    <Action>
-                      <Position>1387;512</Position>
-                      <StyleLien>1</StyleLien>
-                      <PreAssertion>?</PreAssertion>
-                      <PostAssertion>?</PostAssertion>
-                      <Titre>On choisit une question aléatoirement dans la liste des premier pré-requis</Titre>
-                      <DetailsVisible>1</DetailsVisible>
-                      <DetailsVideVisible>1</DetailsVideVisible>
-                      <Enfants/>
-                    </Action>
-                    <Action>
-                      <Position>1746;509</Position>
-                      <StyleLien>1</StyleLien>
-                      <PreAssertion>?</PreAssertion>
-                      <PostAssertion>?</PostAssertion>
-                      <Titre>Mettre la première question dans la liste de déjà vue</Titre>
-                      <DetailsVisible>1</DetailsVisible>
-                      <DetailsVideVisible>1</DetailsVideVisible>
-                      <Enfants/>
-                    </Action>
-                  </Enfants>
-                </Action>
-                <Action>
-                  <Position>1886;406</Position>
+                  <Position>1507;372</Position>
                   <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>Affiche la premiere question</Titre>
+                  <PreAssertion>questionsUtilisables []</PreAssertion>
+                  <PostAssertion>questionActuelle</PostAssertion>
+                  <Titre>Choisir une question facile</Titre>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>1</DetailsVideVisible>
                   <Enfants/>
                 </Action>
+                <Action>
+                  <Position>1911;371</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>questionActuelle</PreAssertion>
+                  <PostAssertion>dejaVu[]</PostAssertion>
+                  <Titre>Mettre la première question dans la liste de déjà vue</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants>
+                    <Action>
+                      <Position>2073;445</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>dejavu.append(questionActuelle)</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
+                </Action>
+              </Enfants>
+            </Action>
+            <Action>
+              <Position>2718;284</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>questionsUtilisables []
+questionsQCM []
+dejaVu[]
+tagsUtilsables []
+ontologie[]
+questionActuelle</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>Déroulement principal</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants>
+                <Iteration>
+                  <Position>2973.5;347.5</Position>
+                  <StyleLien>1</StyleLien>
+                  <Titre>true</Titre>
+                  <IterationFixe>0</IterationFixe>
+                  <Enfants>
+                    <Action>
+                      <Position>2460;435</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>questionActuelle</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>Affiche la question et ses réponses</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                    <Action>
+                      <Position>2905;434</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>l'étudiant répond à la question</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
+                </Iteration>
               </Enfants>
             </Action>
           </Enfants>
         </Action>
         <Action>
-          <Position>2165;183</Position>
+          <Position>4063;167</Position>
           <StyleLien>1</StyleLien>
           <PreAssertion>?</PreAssertion>
           <PostAssertion>?</PostAssertion>
@@ -206,23 +261,13 @@ Arbre ontologique</PreAssertion>
       </Enfants>
     </Action>
     <Action>
-      <Position>2289;284</Position>
+      <Position>3958;258</Position>
       <StyleLien>1</StyleLien>
       <PreAssertion>?</PreAssertion>
       <PostAssertion>?</PostAssertion>
       <Titre>Affichage des statistiques</Titre>
       <DetailsVisible>1</DetailsVisible>
       <DetailsVideVisible>1</DetailsVideVisible>
-      <Enfants/>
-    </Action>
-    <Action>
-      <Position>173;521</Position>
-      <StyleLien>1</StyleLien>
-      <PreAssertion>?</PreAssertion>
-      <PostAssertion>?</PostAssertion>
-      <Titre>Ajoute a la liste des questions utilisables</Titre>
-      <DetailsVisible>1</DetailsVisible>
-      <DetailsVideVisible>0</DetailsVideVisible>
       <Enfants/>
     </Action>
   </Elements>
