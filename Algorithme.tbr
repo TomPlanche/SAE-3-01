@@ -1,8 +1,322 @@
-<?xml version="1.0"?>
+<?xml version="1.1"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algorithme</nom>
-  <date_creation>7/10/2022 15:17</date_creation>
-  <Elements/>
-  <Dictionary/>
+  <date_creation>7/11/2022 16:57</date_creation>
+  <Elements>
+    <Action>
+      <Position>992;79</Position>
+      <StyleLien>2</StyleLien>
+      <PreAssertion>ontologie (Dictionnaire),&#xd;
+Banque de question (XML/JSON)</PreAssertion>
+      <PostAssertion>QCM dynamique</PostAssertion>
+      <Titre>QCM dynamique&#xd;
+</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants>
+        <Action>
+          <Position>625;190</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>?</PreAssertion>
+          <PostAssertion>?</PostAssertion>
+          <Titre>Initialisation</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>0</DetailsVideVisible>
+          <Enfants>
+            <Action>
+              <Position>238;293</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>banqueDeQuestion,
+ontologie</PreAssertion>
+              <PostAssertion>questionsQCM []</PostAssertion>
+              <Titre>Creer la liste des questions utiles pour le QCM</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants>
+                <Iteration>
+                  <Position>507.5;381.5</Position>
+                  <StyleLien>1</StyleLien>
+                  <Titre>i allant de 0 a questionQCM[].length
+-1</Titre>
+                  <IterationFixe>1</IterationFixe>
+                  <Enfants>
+                    <Condition>
+                      <Position>431.5;461</Position>
+                      <StyleLien>1</StyleLien>
+                      <estUnique>1</estUnique>
+                      <operationsLogiques>
+                        <operation>
+                          <Titre>banqueDeQuestion[i].tag in ontologie[]</Titre>
+                          <Enfants>
+                            <Action>
+                              <Position>397;528</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Ajoute a la liste des questions utilisables</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                          </Enfants>
+                        </operation>
+                        <operation>
+                          <Titre>Sinon</Titre>
+                          <Enfants/>
+                        </operation>
+                      </operationsLogiques>
+                    </Condition>
+                  </Enfants>
+                </Iteration>
+              </Enfants>
+            </Action>
+            <Action>
+              <Position>1096;291</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>questionsUtilisables []</PostAssertion>
+              <Titre>Creer la liste des questions du premier pré-requis </Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>0</DetailsVideVisible>
+              <Enfants>
+                <Action>
+                  <Position>727;369</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>ontologie</PreAssertion>
+                  <PostAssertion>tagsUtilsables []</PostAssertion>
+                  <Titre>Cherche le premier pré-requis</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants>
+                    <Action>
+                      <Position>836;440</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>tagsUtilisables = ontologie.prerequis[0]</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
+                </Action>
+                <Action>
+                  <Position>1062;370</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>tagsUtilsables []</PreAssertion>
+                  <PostAssertion>questionsUtilisables []</PostAssertion>
+                  <Titre>Creer la liste des questions utilisable</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants>
+                    <Iteration>
+                      <Position>1308.5;441.5</Position>
+                      <StyleLien>1</StyleLien>
+                      <Titre>i allant de 0 a questionQCM[].length
+-1</Titre>
+                      <IterationFixe>1</IterationFixe>
+                      <Enfants>
+                        <Condition>
+                          <Position>1229.5;532</Position>
+                          <StyleLien>1</StyleLien>
+                          <estUnique>1</estUnique>
+                          <operationsLogiques>
+                            <operation>
+                              <Titre>questionQCM[i].tag in tagsUtilisables[]</Titre>
+                              <Enfants>
+                                <Action>
+                                  <Position>1192;606</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>Ajoute a la liste des questions utilisables</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                              </Enfants>
+                            </operation>
+                            <operation>
+                              <Titre>Sinon</Titre>
+                              <Enfants/>
+                            </operation>
+                          </operationsLogiques>
+                        </Condition>
+                      </Enfants>
+                    </Iteration>
+                  </Enfants>
+                </Action>
+              </Enfants>
+            </Action>
+            <Action>
+              <Position>52;290</Position>
+              <StyleLien>1</StyleLien>
+              <PreAssertion>?</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>difficulter ← 1</Titre>
+              <DetailsVisible>0</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants/>
+            </Action>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>2664;164</Position>
+          <StyleLien>2</StyleLien>
+          <PreAssertion>?</PreAssertion>
+          <PostAssertion>?</PostAssertion>
+          <Titre>Déroulement du QCM</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>0</DetailsVideVisible>
+          <Enfants>
+            <Action>
+              <Position>1818;287</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>questionsUtilisables []</PreAssertion>
+              <PostAssertion>questionActuelle</PostAssertion>
+              <Titre>Premiere question</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants>
+                <Action>
+                  <Position>1647;370</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>questionsUtilisables []</PreAssertion>
+                  <PostAssertion>questionActuelle</PostAssertion>
+                  <Titre>Choisir une question facile</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants>
+                    <Action>
+                      <Position>1827;452</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>Recherche de premiere occurence où la difficulté est facile</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
+                </Action>
+                <Action>
+                  <Position>2051;369</Position>
+                  <StyleLien>2</StyleLien>
+                  <PreAssertion>questionActuelle</PreAssertion>
+                  <PostAssertion>dejaVu[]</PostAssertion>
+                  <Titre>Mettre la première question dans la liste de déjà vue</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>1</DetailsVideVisible>
+                  <Enfants>
+                    <Action>
+                      <Position>2213;443</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>dejavu.append(questionActuelle)</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                  </Enfants>
+                </Action>
+              </Enfants>
+            </Action>
+            <Action>
+              <Position>2718;284</Position>
+              <StyleLien>2</StyleLien>
+              <PreAssertion>questionsUtilisables []
+questionsQCM []
+dejaVu[]
+tagsUtilsables []
+ontologie[]
+questionActuelle</PreAssertion>
+              <PostAssertion>?</PostAssertion>
+              <Titre>Déroulement principal</Titre>
+              <DetailsVisible>1</DetailsVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
+              <Enfants>
+                <Iteration>
+                  <Position>2973.5;347.5</Position>
+                  <StyleLien>1</StyleLien>
+                  <Titre>true</Titre>
+                  <IterationFixe>0</IterationFixe>
+                  <Enfants>
+                    <Action>
+                      <Position>2503;441</Position>
+                      <StyleLien>1</StyleLien>
+                      <PreAssertion>questionActuelle</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>Affiche la question et ses réponses</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants/>
+                    </Action>
+                    <Action>
+                      <Position>2967;438</Position>
+                      <StyleLien>2</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>l'étudiant répond à la question</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants>
+                        <Condition>
+                          <Position>3002.5;528</Position>
+                          <StyleLien>1</StyleLien>
+                          <estUnique>0</estUnique>
+                          <operationsLogiques>
+                            <operation>
+                              <Titre>reponse vrai</Titre>
+                              <Enfants>
+                                <Action>
+                                  <Position>2893;610</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>difficulter ← 1</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                              </Enfants>
+                            </operation>
+                            <operation>
+                              <Titre>Sinon</Titre>
+                              <Enfants/>
+                            </operation>
+                          </operationsLogiques>
+                        </Condition>
+                      </Enfants>
+                    </Action>
+                  </Enfants>
+                </Iteration>
+              </Enfants>
+            </Action>
+          </Enfants>
+        </Action>
+        <Action>
+          <Position>4063;167</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>?</PreAssertion>
+          <PostAssertion>?</PostAssertion>
+          <Titre>Fin du QCM</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>0</DetailsVideVisible>
+          <Enfants/>
+        </Action>
+      </Enfants>
+    </Action>
+    <Action>
+      <Position>3958;258</Position>
+      <StyleLien>1</StyleLien>
+      <PreAssertion>?</PreAssertion>
+      <PostAssertion>?</PostAssertion>
+      <Titre>Affichage des statistiques</Titre>
+      <DetailsVisible>1</DetailsVisible>
+      <DetailsVideVisible>1</DetailsVideVisible>
+      <Enfants/>
+    </Action>
+  </Elements>
 </Algorithme>
