@@ -1,169 +1,159 @@
-Etudiant = (idEtudiant VARCHAR(50), nom VARCHAR(50), prenom VARCHAR(50), formation VARCHAR(50), td VARCHAR(50), tp VARCHAR(50));
-Enseignant = (idEnseignant VARCHAR(50), nom VARCHAR(50), prenom VARCHAR(50), matiere VARCHAR(50), formation VARCHAR(50), nationalité VARCHAR(50));
-Depot = (idDepot VARCHAR(50), status LOGICAL, dateOuverture DATETIME, dateFermeture VARCHAR(50), #idEnseignant);
-Reponse = (label VARCHAR(50));
-Tag = (idTag VARCHAR(50), label VARCHAR(50));
-QCM = (idQCM VARCHAR(50), titre VARCHAR(50), description VARCHAR(50), etat VARCHAR(50), #idEnseignant);
-difficulte = (id INT, label VARCHAR(50));
-type = (idType INT, label VARCHAR(50));
-question = (idQuestion VARCHAR(50), titre VARCHAR(50), etat VARCHAR(50), #idType, #id, #idEtudiant, #idDepot, #idEnseignant);
-avoir = (#idQuestion, #label, etatDeVerite LOGICAL);
-lier = (#idQuestion, #idTag);
-etre = (#idQuestion, #idQCM, nbTentativeTotal INT, nbTentativeReussit INT);
-s_entrainer = (#idEtudiant, #idQCM, tempsPasse VARCHAR(50), score VARCHAR(50));
-creer = (#idEnseignant, #idTag);
 
--- 3.7.	Script SQL des tables
-
-CREATE TABLE Etudiant(
-   idEtudiant VARCHAR(50),
-   nom VARCHAR(50) NOT NULL,
-   prenom VARCHAR(50),
-   formation VARCHAR(50) NOT NULL,
-   td VARCHAR(50),
-   tp VARCHAR(50),
-   PRIMARY KEY(idEtudiant)
-);
-
-CREATE TABLE Enseignant(
-   idEnseignant VARCHAR(50),
-   nom VARCHAR(50) NOT NULL,
-   prenom VARCHAR(50) NOT NULL,
-   matiere VARCHAR(50) NOT NULL,
-   formation VARCHAR(50) NOT NULL,
-   nationalité VARCHAR(50) NOT NULL,
-   PRIMARY KEY(idEnseignant)
-);
-
-CREATE TABLE Depot(
-   idDepot VARCHAR(50),
-   status LOGICAL NOT NULL,
-   dateOuverture DATETIME NOT NULL,
-   dateFermeture VARCHAR(50) NOT NULL,
-   idEnseignant VARCHAR(50) NOT NULL,
-   PRIMARY KEY(idDepot),
-   FOREIGN KEY(idEnseignant) REFERENCES Enseignant(idEnseignant)
-);
-
-CREATE TABLE Reponse(
-   label VARCHAR(50),
-   PRIMARY KEY(label)
-);
-
-CREATE TABLE Tag(
-   idTag VARCHAR(50),
-   label VARCHAR(50) NOT NULL,
-   PRIMARY KEY(idTag)
-);
-
-CREATE TABLE QCM(
-   idQCM VARCHAR(50),
-   titre VARCHAR(50) NOT NULL,
-   description VARCHAR(50) NOT NULL,
-   etat VARCHAR(50) NOT NULL,
-   idEnseignant VARCHAR(50) NOT NULL,
-   PRIMARY KEY(idQCM),
-   FOREIGN KEY(idEnseignant) REFERENCES Enseignant(idEnseignant)
-);
-
-CREATE TABLE difficulte(
-   id INT,
-   label VARCHAR(50) NOT NULL,
-   PRIMARY KEY(id)
-);
-
-CREATE TABLE type(
-   idType INT,
-   label VARCHAR(50) NOT NULL,
-   PRIMARY KEY(idType)
-);
-
-CREATE TABLE question(
-   idQuestion VARCHAR(50),
-   titre VARCHAR(50) NOT NULL,
-   etat VARCHAR(50) NOT NULL,
-   idType INT NOT NULL,
-   id INT NOT NULL,
-   idEtudiant VARCHAR(50) NOT NULL,
-   idDepot VARCHAR(50) NOT NULL,
-   idEnseignant VARCHAR(50) NOT NULL,
-   PRIMARY KEY(idQuestion),
-   FOREIGN KEY(idType) REFERENCES type(idType),
-   FOREIGN KEY(id) REFERENCES difficulte(id),
-   FOREIGN KEY(idEtudiant) REFERENCES Etudiant(idEtudiant),
-   FOREIGN KEY(idDepot) REFERENCES Depot(idDepot),
-   FOREIGN KEY(idEnseignant) REFERENCES Enseignant(idEnseignant)
-);
-
-CREATE TABLE avoir(
-   idQuestion VARCHAR(50),
-   label VARCHAR(50),
-   etatDeVerite LOGICAL NOT NULL,
-   PRIMARY KEY(idQuestion, label),
-   FOREIGN KEY(idQuestion) REFERENCES question(idQuestion),
-   FOREIGN KEY(label) REFERENCES Reponse(label)
-);
-
-CREATE TABLE lier(
-   idQuestion VARCHAR(50),
-   idTag VARCHAR(50),
-   PRIMARY KEY(idQuestion, idTag),
-   FOREIGN KEY(idQuestion) REFERENCES question(idQuestion),
-   FOREIGN KEY(idTag) REFERENCES Tag(idTag)
-);
-
-CREATE TABLE etre(
-   idQuestion VARCHAR(50),
-   idQCM VARCHAR(50),
-   nbTentativeTotal INT NOT NULL,
-   nbTentativeReussit INT NOT NULL,
-   PRIMARY KEY(idQuestion, idQCM),
-   FOREIGN KEY(idQuestion) REFERENCES question(idQuestion),
-   FOREIGN KEY(idQCM) REFERENCES QCM(idQCM)
-);
-
-CREATE TABLE s_entrainer(
-   idEtudiant VARCHAR(50),
-   idQCM VARCHAR(50),
-   tempsPasse VARCHAR(50),
-   score VARCHAR(50),
-   PRIMARY KEY(idEtudiant, idQCM),
-   FOREIGN KEY(idEtudiant) REFERENCES Etudiant(idEtudiant),
-   FOREIGN KEY(idQCM) REFERENCES QCM(idQCM)
-);
-
-CREATE TABLE creer(
-   idEnseignant VARCHAR(50),
-   idTag VARCHAR(50),
-   PRIMARY KEY(idEnseignant, idTag),
-   FOREIGN KEY(idEnseignant) REFERENCES Enseignant(idEnseignant),
-   FOREIGN KEY(idTag) REFERENCES Tag(idTag)
-);
+-- Création des tables
 
 
--- Un étudiant devra pouvoir :
--- -	Voir tous les QCM d’un enseignant.
-select * from QCM where idEnseignant = 'idEnseignant';
--- -	Ajouter une question (à un dépôt (étudiant), à un/des QCM(s)). 
-insert into question values ('idQuestion', 'titre', 'etat', 'idType', 'id', 'idEtudiant', 'idDepot', 'idEnseignant');
--- Un enseignant devra pouvoir :
--- -	Supprimer une question.
-delete from question where idQuestion = 'idQuestion';
--- -	Modifier une question (tags / contenu / état (proposée, refusée)).
-update question set titre = 'titre', etat = 'etat', idType = 'idType', id = 'id', idEtudiant = 'idEtudiant', idDepot = 'idDepot', idEnseignant = 'idEnseignant' where idQuestion = 'idQuestion';
--- -	Ajouter un nouveau tag
-insert into Tag values ('idTag', 'label');
--- -	Modifier un tag mal formulé
-update Tag set label = 'label' where idTag = 'idTag';
--- -	Supprimer un tag obsolète 
-delete from Tag where idTag = 'idTag';
--- -	Créer un dépôt pour les étudiants
-insert into Depot values ('idDepot', 'status', 'dateOuverture', 'dateFermeture', 'idEnseignant');
+-- Etudiant = (idEtudiant NUMBER(6), nom VARCHAR2(50), prenom VARCHAR2(50), formation VARCHAR2(50), td NUMBER(2), tp NUMBER(2));
 
--- Pour récupérer des statistiques il faudra :
--- -	Voir le nombre d’étudiants qui ont répondu à un QCM précis.
-select count(*) from s_entrainer where idQCM = 'idQCM';
--- -	Voir qui n’a pas répondu / qui a le + de tentatives.
-select * from s_entrainer where idQCM = 'idQCM' order by nbTentativeTotal desc;
--- -	Voir la question-là plus/moins réussie.
-select * from s_entrainer where idQCM = 'idQCM' order by score desc;
+create table ETUDIANT (
+    idEtudiant NUMBER(6) primary key,
+    nom VARCHAR2(50) not null,
+    prenom VARCHAR2(50) not null,
+    formation VARCHAR2(50),
+    td NUMBER(2),
+    tp NUMBER(2)
+)
+
+-- Enseignant = (idEnseignant VARCHAR2(50), nom VARCHAR2(50), prenom VARCHAR2(50), matiere VARCHAR2(50), nationalité VARCHAR2(50));
+
+create table ENSEIGNANT(
+    idEnseignant VARCHAR2(50) primary key,
+    nom VARCHAR2(50) not null,
+    prenom VARCHAR2(50) not null,
+    matiere VARCHAR2(50) not null,
+    nationalité VARCHAR2(50) 
+
+)
+
+
+-- Depot = (idDepot VARCHAR2(50), statut BOLEEAN, dateOuverture DATETIME, dateFermeture VARCHAR2(50), #idEnseignant);
+
+create table DEPOT(
+    idDepot VARCHAR2(50) primary key,
+    statut BOLEEAN not null,
+    dateOuverture DATETIME not null,
+    dateFermeture DATETIME not null,
+    idEnseignant VARCHAR2(50) not null,
+    foreign key (idEnseignant) references ENSEIGNANT(idEnseignant)
+)
+
+-- Reponse = (label VARCHAR2(50));
+
+create table REPONSE(
+    label VARCHAR2(50) primary key
+)
+
+
+-- Tag = (idTag NUMBER(3), label VARCHAR2(50), #idEnseignant);
+
+create table TAG(
+    idTag NUMBER(3) primary key,
+    label VARCHAR2(50) not null,
+    idEnseignant VARCHAR2(50) not null,
+    foreign key (idEnseignant) references ENSEIGNANT(idEnseignant)
+)
+
+QCM = (idQCM VARCHAR2(50), titre VARCHAR2(50), description VARCHAR2(50), etat BOOLEAN, #idEnseignant);
+
+create table QCM(
+    idQCM VARCHAR2(50) primary key,
+    titre VARCHAR2(50) not null,
+    description VARCHAR2(50) not null,
+    etat BOOLEAN not null,
+    idEnseignant VARCHAR2(50) not null,
+    foreign key (idEnseignant) references ENSEIGNANT(idEnseignant)
+)
+
+-- difficulte = (id NUMBER(1), label VARCHAR2(50));
+
+create table DIFFICULTE(
+    id NUMBER(1) primary key,
+    label VARCHAR2(50) not null
+)
+
+type = (idType NUMBER(2), label VARCHAR2(50));
+
+create table TYPE(
+    idType NUMBER(2) primary key,
+    label VARCHAR2(50) not null
+)
+
+question = (idQuestion NUMBER(4), titre VARCHAR2(50), etat VARCHAR2(50), #idType, #idDifficulte, #idEtudiant, #idDepot, #idEnseignant);
+
+create table QUESTION(
+    idQuestion NUMBER(4) primary key,
+    titre VARCHAR2(50) not null,
+    etat VARCHAR2(50) not null,
+    idType NUMBER(2) not null,
+    idDifficulte NUMBER(1) not null,
+    idEtudiant NUMBER(6) not null,
+    idDepot VARCHAR2(50) not null,
+    idEnseignant VARCHAR2(50) not null,
+    foreign key (idType) references TYPE(idType),
+    foreign key (idDifficulte) references DIFFICULTE(id),
+    foreign key (idEtudiant) references ETUDIANT(idEtudiant),
+    foreign key (idDepot) references DEPOT(idDepot),
+    foreign key (idEnseignant) references ENSEIGNANT(idEnseignant)
+)
+
+-- avoir = (#idQuestion, #idReponse, etatDeVerite BOOLEAN);
+
+create table AVOIR(
+    idQuestion NUMBER(4) not null,
+    idReponse VARCHAR2(50) not null,
+    etatDeVerite BOOLEAN not null,
+    primary key (idQuestion, idReponse),
+    foreign key (idQuestion) references QUESTION(idQuestion),
+    foreign key (idReponse) references REPONSE(label)
+)
+
+
+-- lier = (#idQuestion, #idTag);
+
+create table LIER(
+    idQuestion NUMBER(4) not null,
+    idTag NUMBER(3) not null,
+    primary key (idQuestion, idTag),
+    foreign key (idQuestion) references QUESTION(idQuestion),
+    foreign key (idTag) references TAG(idTag)
+)
+
+-- etre = (#idQuestion, #idQCM, nbTentativeTotal NUMBER(4), nbTentativeReussit NUMBER(4));
+
+create table ETRE(
+    idQuestion NUMBER(4) not null,
+    idQCM VARCHAR2(50) not null,
+    nbTentativeTotal NUMBER(4) not null,
+    nbTentativeReussit NUMBER(4) not null,
+    primary key (idQuestion, idQCM),
+    foreign key (idQuestion) references QUESTION(idQuestion),
+    foreign key (idQCM) references QCM(idQCM)
+)
+
+-- entrainer = (#idEtudiant, #idQCM, tempsPasse TIME, score NUMBER(4,2));
+
+create table ENTRAINER(
+    idEtudiant NUMBER(6) not null,
+    idQCM VARCHAR2(50) not null,
+    tempsPasse TIME not null,
+    score NUMBER(4,2) not null,
+    primary key (idEtudiant, idQCM),
+    foreign key (idEtudiant) references ETUDIANT(idEtudiant),
+    foreign key (idQCM) references QCM(idQCM)
+)
+
+
+-- Selection de chaque table 
+
+select * from ETUDIANT;
+select * from ENSEIGNANT;
+select * from DEPOT;
+select * from REPONSE;
+select * from TAG;
+select * from QCM;
+select * from DIFFICULTE;
+select * from TYPE;
+select * from QUESTION;
+select * from AVOIR;
+select * from LIER;
+select * from ETRE;
+select * from ENTRAINER;
