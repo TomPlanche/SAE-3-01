@@ -5,7 +5,7 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\misti\OneDrive\Bureau\2nd annee\SAE\SAE-3-01\BDs\BD</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\IUT\S3\SAE-3-01\BDs\BD</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
