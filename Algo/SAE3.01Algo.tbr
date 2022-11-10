@@ -2,10 +2,10 @@
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algorithme</nom>
-  <date_creation>9/11/2022 15:43</date_creation>
+  <date_creation>10/11/2022 12:09</date_creation>
   <Elements>
     <Action>
-      <Position>758;50</Position>
+      <Position>2212;63</Position>
       <StyleLien>2</StyleLien>
       <PreAssertion>BD
 id_Ontologie</PreAssertion>
@@ -19,23 +19,23 @@ id_Ontologie</PreAssertion>
           <StyleLien>2</StyleLien>
           <PreAssertion>BD
 id_Ontologie</PreAssertion>
-          <PostAssertion>?</PostAssertion>
+          <PostAssertion>[parametre créé]</PostAssertion>
           <Titre>Initialisation</Titre>
           <DetailsVisible>1</DetailsVisible>
-          <DetailsVideVisible>0</DetailsVideVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Action>
               <Position>87;300</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>BD
 id_Ontologie</PreAssertion>
-              <PostAssertion>?</PostAssertion>
+              <PostAssertion>banqueQ</PostAssertion>
               <Titre>Connection</Titre>
               <DetailsVisible>1</DetailsVisible>
-              <DetailsVideVisible>0</DetailsVideVisible>
+              <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants>
                 <Action>
-                  <Position>99;391</Position>
+                  <Position>97;389</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -57,26 +57,16 @@ id_Ontologie</PreAssertion>
               </Enfants>
             </Action>
             <Action>
-              <Position>703;292</Position>
+              <Position>665;292</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>?</PreAssertion>
-              <PostAssertion>?</PostAssertion>
-              <Titre>Creation des variables</Titre>
+              <PostAssertion>[parametre créé]</PostAssertion>
+              <Titre>Creation des variables </Titre>
               <DetailsVisible>1</DetailsVisible>
               <DetailsVideVisible>0</DetailsVideVisible>
               <Enfants>
-                <Procedure>
-                  <Position>852;387</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>questionNivX ← ★ (niveauActuel, banqueQ)</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Procedure>
                 <Action>
-                  <Position>628;387</Position>
+                  <Position>517;437</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -85,18 +75,8 @@ id_Ontologie</PreAssertion>
                   <DetailsVideVisible>0</DetailsVideVisible>
                   <Enfants/>
                 </Action>
-                <Procedure>
-                  <Position>1092;387</Position>
-                  <StyleLien>1</StyleLien>
-                  <PreAssertion>?</PreAssertion>
-                  <PostAssertion>?</PostAssertion>
-                  <Titre>questionUtilisable ← ◊ (ontoligie, questionNivX)</Titre>
-                  <DetailsVisible>1</DetailsVisible>
-                  <DetailsVideVisible>0</DetailsVideVisible>
-                  <Enfants/>
-                </Procedure>
                 <Action>
-                  <Position>489;391</Position>
+                  <Position>459;380</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -106,7 +86,7 @@ id_Ontologie</PreAssertion>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>528;448</Position>
+                  <Position>646;381</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -115,6 +95,36 @@ id_Ontologie</PreAssertion>
                   <DetailsVideVisible>0</DetailsVideVisible>
                   <Enfants/>
                 </Action>
+                <Action>
+                  <Position>885;382</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>questionEffectuee ← 0</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+                <Action>
+                  <Position>1099;382</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>questionReussie ← 0</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants/>
+                </Action>
+                <Procedure>
+                  <Position>775;444</Position>
+                  <StyleLien>1</StyleLien>
+                  <PreAssertion>?</PreAssertion>
+                  <PostAssertion>?</PostAssertion>
+                  <Titre>questionNivX ← ★ (niveauActuel, banqueQ)</Titre>
+                  <DetailsVisible>1</DetailsVisible>
+                  <DetailsVideVisible>0</DetailsVideVisible>
+                  <Enfants/>
+                </Procedure>
               </Enfants>
             </Action>
             <Action>
@@ -130,13 +140,13 @@ id_Ontologie</PreAssertion>
           </Enfants>
         </Action>
         <Action>
-          <Position>2118;182</Position>
+          <Position>1960;184</Position>
           <StyleLien>2</StyleLien>
-          <PreAssertion>?</PreAssertion>
+          <PreAssertion>[parametre créé]</PreAssertion>
           <PostAssertion>?</PostAssertion>
           <Titre>Entrainement</Titre>
           <DetailsVisible>1</DetailsVisible>
-          <DetailsVideVisible>0</DetailsVideVisible>
+          <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Iteration>
               <Position>2151.5;265.5</Position>
@@ -153,78 +163,6 @@ id_Ontologie</PreAssertion>
                   <DetailsVisible>1</DetailsVisible>
                   <DetailsVideVisible>0</DetailsVideVisible>
                   <Enfants>
-                    <Condition>
-                      <Position>1312.5;480</Position>
-                      <StyleLien>1</StyleLien>
-                      <estUnique>1</estUnique>
-                      <operationsLogiques>
-                        <operation>
-                          <Titre>! premier tour </Titre>
-                          <Enfants>
-                            <Procedure>
-                              <Position>1275;575</Position>
-                              <StyleLien>1</StyleLien>
-                              <PreAssertion>?</PreAssertion>
-                              <PostAssertion>?</PostAssertion>
-                              <Titre>questionUtilisable ← ◊ (ontoligie, questionNivX)</Titre>
-                              <DetailsVisible>1</DetailsVisible>
-                              <DetailsVideVisible>0</DetailsVideVisible>
-                              <Enfants/>
-                            </Procedure>
-                            <Procedure>
-                              <Position>1536;575</Position>
-                              <StyleLien>1</StyleLien>
-                              <PreAssertion>?</PreAssertion>
-                              <PostAssertion>?</PostAssertion>
-                              <Titre>questionUtilisable ← ♧ (dejaVu, questionUtilisable)</Titre>
-                              <DetailsVisible>1</DetailsVisible>
-                              <DetailsVideVisible>0</DetailsVideVisible>
-                              <Enfants/>
-                            </Procedure>
-                            <Condition>
-                              <Position>1062.5;577</Position>
-                              <StyleLien>1</StyleLien>
-                              <estUnique>1</estUnique>
-                              <operationsLogiques>
-                                <operation>
-                                  <Titre>changementNiveau</Titre>
-                                  <Enfants>
-                                    <Procedure>
-                                      <Position>1110;667</Position>
-                                      <StyleLien>1</StyleLien>
-                                      <PreAssertion>?</PreAssertion>
-                                      <PostAssertion>?</PostAssertion>
-                                      <Titre>questionNivX ← ★ (niveauActuel, banqueQ)</Titre>
-                                      <DetailsVisible>1</DetailsVisible>
-                                      <DetailsVideVisible>0</DetailsVideVisible>
-                                      <Enfants/>
-                                    </Procedure>
-                                    <Action>
-                                      <Position>859;666</Position>
-                                      <StyleLien>1</StyleLien>
-                                      <PreAssertion>?</PreAssertion>
-                                      <PostAssertion>?</PostAssertion>
-                                      <Titre>changementNiveau ← false</Titre>
-                                      <DetailsVisible>1</DetailsVisible>
-                                      <DetailsVideVisible>0</DetailsVideVisible>
-                                      <Enfants/>
-                                    </Action>
-                                  </Enfants>
-                                </operation>
-                                <operation>
-                                  <Titre>Sinon</Titre>
-                                  <Enfants/>
-                                </operation>
-                              </operationsLogiques>
-                            </Condition>
-                          </Enfants>
-                        </operation>
-                        <operation>
-                          <Titre>Sinon</Titre>
-                          <Enfants/>
-                        </operation>
-                      </operationsLogiques>
-                    </Condition>
                     <Action>
                       <Position>1541;471</Position>
                       <StyleLien>1</StyleLien>
@@ -235,10 +173,141 @@ id_Ontologie</PreAssertion>
                       <DetailsVideVisible>0</DetailsVideVisible>
                       <Enfants/>
                     </Action>
+                    <Action>
+                      <Position>1964;474</Position>
+                      <StyleLien>2</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>Gestion de la liste déjaVu</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants>
+                        <Action>
+                          <Position>1780;575</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>?</PreAssertion>
+                          <PostAssertion>?</PostAssertion>
+                          <Titre>déjaVu.add(questionActuelle)</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>0</DetailsVideVisible>
+                          <Enfants/>
+                        </Action>
+                        <Condition>
+                          <Position>2089.5;579</Position>
+                          <StyleLien>1</StyleLien>
+                          <estUnique>1</estUnique>
+                          <operationsLogiques>
+                            <operation>
+                              <Titre>déjaVu.lenght () > 5</Titre>
+                              <Enfants>
+                                <Action>
+                                  <Position>2052;662</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>On enleve la question la plus ancienne</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                              </Enfants>
+                            </operation>
+                            <operation>
+                              <Titre>Sinon</Titre>
+                              <Enfants/>
+                            </operation>
+                          </operationsLogiques>
+                        </Condition>
+                      </Enfants>
+                    </Action>
+                    <Action>
+                      <Position>1242;496</Position>
+                      <StyleLien>2</StyleLien>
+                      <PreAssertion>?</PreAssertion>
+                      <PostAssertion>?</PostAssertion>
+                      <Titre>Cherche la liste des questionsUtilisable</Titre>
+                      <DetailsVisible>1</DetailsVisible>
+                      <DetailsVideVisible>0</DetailsVideVisible>
+                      <Enfants>
+                        <Condition>
+                          <Position>1052.5;641</Position>
+                          <StyleLien>1</StyleLien>
+                          <estUnique>1</estUnique>
+                          <operationsLogiques>
+                            <operation>
+                              <Titre>changementNiveau</Titre>
+                              <Enfants>
+                                <Procedure>
+                                  <Position>1100;731</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>questionNivX ← ★ (niveauActuel, banqueQ)</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Procedure>
+                                <Action>
+                                  <Position>849;730</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>changementNiveau ← false</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                              </Enfants>
+                            </operation>
+                            <operation>
+                              <Titre>Sinon</Titre>
+                              <Enfants/>
+                            </operation>
+                          </operationsLogiques>
+                        </Condition>
+                        <Procedure>
+                          <Position>1265;639</Position>
+                          <StyleLien>1</StyleLien>
+                          <PreAssertion>?</PreAssertion>
+                          <PostAssertion>?</PostAssertion>
+                          <Titre>questionUtilisable ← ◊ (ontoligie, questionNivX)</Titre>
+                          <DetailsVisible>1</DetailsVisible>
+                          <DetailsVideVisible>0</DetailsVideVisible>
+                          <Enfants/>
+                        </Procedure>
+                        <Condition>
+                          <Position>1543.5;630</Position>
+                          <StyleLien>1</StyleLien>
+                          <estUnique>1</estUnique>
+                          <operationsLogiques>
+                            <operation>
+                              <Titre>questionEffectuee 
+!= 0</Titre>
+                              <Enfants>
+                                <Procedure>
+                                  <Position>1522;712</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>questionUtilisable ← ♧ (dejaVu, questionUtilisable)</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Procedure>
+                              </Enfants>
+                            </operation>
+                            <operation>
+                              <Titre>Sinon</Titre>
+                              <Enfants/>
+                            </operation>
+                          </operationsLogiques>
+                        </Condition>
+                      </Enfants>
+                    </Action>
                   </Enfants>
                 </Action>
                 <Action>
-                  <Position>1765;377</Position>
+                  <Position>2156;379</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -248,7 +317,7 @@ id_Ontologie</PreAssertion>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>1969;376</Position>
+                  <Position>2392;380</Position>
                   <StyleLien>2</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>listeDeReponse</PostAssertion>
@@ -257,8 +326,8 @@ id_Ontologie</PreAssertion>
                   <DetailsVideVisible>0</DetailsVideVisible>
                   <Enfants>
                     <Condition>
-                      <Position>1935.5;459</Position>
-                      <StyleLien>0</StyleLien>
+                      <Position>2358.5;463</Position>
+                      <StyleLien>1</StyleLien>
                       <estUnique>0</estUnique>
                       <operationsLogiques>
                         <operation>
@@ -269,11 +338,21 @@ id_Ontologie</PreAssertion>
                           <Titre>Sinon</Titre>
                           <Enfants>
                             <Action>
-                              <Position>2072;539</Position>
+                              <Position>2419;561</Position>
                               <StyleLien>1</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>listeDeReponse</PostAssertion>
                               <Titre>repond</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
+                            <Action>
+                              <Position>2670;561</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>questionEffectuee + 1</Titre>
                               <DetailsVisible>1</DetailsVisible>
                               <DetailsVideVisible>0</DetailsVideVisible>
                               <Enfants/>
@@ -285,7 +364,7 @@ id_Ontologie</PreAssertion>
                   </Enfants>
                 </Action>
                 <Action>
-                  <Position>2677;377</Position>
+                  <Position>4439;356</Position>
                   <StyleLien>2</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -294,7 +373,7 @@ id_Ontologie</PreAssertion>
                   <DetailsVideVisible>0</DetailsVideVisible>
                   <Enfants>
                     <Condition>
-                      <Position>2626.5;455</Position>
+                      <Position>4398.5;440</Position>
                       <StyleLien>1</StyleLien>
                       <estUnique>0</estUnique>
                       <operationsLogiques>
@@ -302,7 +381,7 @@ id_Ontologie</PreAssertion>
                           <Titre>listeReponseJuste == liseDeReponse</Titre>
                           <Enfants>
                             <Action>
-                              <Position>2399;539</Position>
+                              <Position>2981;545</Position>
                               <StyleLien>2</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>?</PostAssertion>
@@ -311,22 +390,22 @@ id_Ontologie</PreAssertion>
                               <DetailsVideVisible>0</DetailsVideVisible>
                               <Enfants>
                                 <Action>
-                                  <Position>2394;624</Position>
+                                  <Position>2976;630</Position>
                                   <StyleLien>2</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
-                                  <Titre>Parcours de tous les tags de la question et auggmenter dans l'ontologie</Titre>
+                                  <Titre>Parcours de tous les tags de la question et augmenter dans l'ontologie</Titre>
                                   <DetailsVisible>1</DetailsVisible>
                                   <DetailsVideVisible>0</DetailsVideVisible>
                                   <Enfants>
                                     <Iteration>
-                                      <Position>2480.5;699.5</Position>
+                                      <Position>3062.5;705.5</Position>
                                       <StyleLien>1</StyleLien>
-                                      <Titre>i etant tous les tags de la question</Titre>
+                                      <Titre>pour tous les tags de la question (i)</Titre>
                                       <IterationFixe>1</IterationFixe>
                                       <Enfants>
                                         <ConditionMultiple>
-                                          <Position>2229.5;846</Position>
+                                          <Position>2811.5;852</Position>
                                           <StyleLien>0</StyleLien>
                                           <Titre>i</Titre>
                                           <operationsLogiques>
@@ -334,7 +413,7 @@ id_Ontologie</PreAssertion>
                                               <Titre>Statut::Facile</Titre>
                                               <Enfants>
                                                 <Action>
-                                                  <Position>2008;947</Position>
+                                                  <Position>2590;953</Position>
                                                   <StyleLien>1</StyleLien>
                                                   <PreAssertion>?</PreAssertion>
                                                   <PostAssertion>?</PostAssertion>
@@ -349,7 +428,7 @@ id_Ontologie</PreAssertion>
                                               <Titre>Statut::Moyen_1</Titre>
                                               <Enfants>
                                                 <Action>
-                                                  <Position>2215;945</Position>
+                                                  <Position>2797;951</Position>
                                                   <StyleLien>1</StyleLien>
                                                   <PreAssertion>?</PreAssertion>
                                                   <PostAssertion>?</PostAssertion>
@@ -364,7 +443,7 @@ id_Ontologie</PreAssertion>
                                               <Titre>Statut::Moyen_2</Titre>
                                               <Enfants>
                                                 <Action>
-                                                  <Position>2424;943</Position>
+                                                  <Position>3006;949</Position>
                                                   <StyleLien>1</StyleLien>
                                                   <PreAssertion>?</PreAssertion>
                                                   <PostAssertion>?</PostAssertion>
@@ -379,7 +458,7 @@ id_Ontologie</PreAssertion>
                                               <Titre>Statut::Difficile</Titre>
                                               <Enfants>
                                                 <Action>
-                                                  <Position>2635;940</Position>
+                                                  <Position>3217;946</Position>
                                                   <StyleLien>1</StyleLien>
                                                   <PreAssertion>?</PreAssertion>
                                                   <PostAssertion>?</PostAssertion>
@@ -399,7 +478,7 @@ id_Ontologie</PreAssertion>
                               </Enfants>
                             </Action>
                             <Action>
-                              <Position>2792;541</Position>
+                              <Position>3619;553</Position>
                               <StyleLien>2</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>?</PostAssertion>
@@ -408,7 +487,7 @@ id_Ontologie</PreAssertion>
                               <DetailsVideVisible>0</DetailsVideVisible>
                               <Enfants>
                                 <Action>
-                                  <Position>2788;631</Position>
+                                  <Position>3452;648</Position>
                                   <StyleLien>2</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -417,13 +496,13 @@ id_Ontologie</PreAssertion>
                                   <DetailsVideVisible>0</DetailsVideVisible>
                                   <Enfants>
                                     <Iteration>
-                                      <Position>2875.5;700.5</Position>
+                                      <Position>3539.5;717.5</Position>
                                       <StyleLien>1</StyleLien>
-                                      <Titre>i etant tous les tags du niveauActuel</Titre>
+                                      <Titre>pour tous les tags du niveauActuel(i)</Titre>
                                       <IterationFixe>1</IterationFixe>
                                       <Enfants>
                                         <Condition>
-                                          <Position>2800.5;792</Position>
+                                          <Position>3464.5;809</Position>
                                           <StyleLien>1</StyleLien>
                                           <estUnique>1</estUnique>
                                           <operationsLogiques>
@@ -431,7 +510,7 @@ id_Ontologie</PreAssertion>
                                               <Titre>ontolgie[niveauActuel][i] != Statut::validé </Titre>
                                               <Enfants>
                                                 <Action>
-                                                  <Position>2833;861</Position>
+                                                  <Position>3497;878</Position>
                                                   <StyleLien>1</StyleLien>
                                                   <PreAssertion>?</PreAssertion>
                                                   <PostAssertion>?</PostAssertion>
@@ -453,7 +532,7 @@ id_Ontologie</PreAssertion>
                                   </Enfants>
                                 </Action>
                                 <Action>
-                                  <Position>2658;631</Position>
+                                  <Position>3322;648</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -463,7 +542,7 @@ id_Ontologie</PreAssertion>
                                   <Enfants/>
                                 </Action>
                                 <Condition>
-                                  <Position>3137.5;629</Position>
+                                  <Position>3801.5;646</Position>
                                   <StyleLien>1</StyleLien>
                                   <estUnique>0</estUnique>
                                   <operationsLogiques>
@@ -471,17 +550,17 @@ id_Ontologie</PreAssertion>
                                       <Titre>validé ? &amp;&amp; niveauActuel != max</Titre>
                                       <Enfants>
                                         <Action>
-                                          <Position>3095;760</Position>
+                                          <Position>3759;777</Position>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>?</PreAssertion>
                                           <PostAssertion>?</PostAssertion>
-                                          <Titre>niveauActuel ++</Titre>
+                                          <Titre>niveauActuel + 1</Titre>
                                           <DetailsVisible>1</DetailsVisible>
                                           <DetailsVideVisible>0</DetailsVideVisible>
                                           <Enfants/>
                                         </Action>
                                         <Action>
-                                          <Position>3236;759</Position>
+                                          <Position>3900;776</Position>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>?</PreAssertion>
                                           <PostAssertion>?</PostAssertion>
@@ -500,18 +579,271 @@ id_Ontologie</PreAssertion>
                                 </Condition>
                               </Enfants>
                             </Action>
+                            <Action>
+                              <Position>4215;540</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Modification des stats de la question</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants>
+                                <Procedure>
+                                  <Position>4245;629</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>modifStatsQuestion</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Procedure>
+                              </Enfants>
+                            </Action>
+                            <Action>
+                              <Position>3916;544</Position>
+                              <StyleLien>1</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>questionReussie + 1</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants/>
+                            </Action>
                           </Enfants>
                         </operation>
                         <operation>
                           <Titre>Sinon</Titre>
-                          <Enfants/>
+                          <Enfants>
+                            <Action>
+                              <Position>4593;531</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Diminue pour chaque tag le statut du niveau actuel</Titre>
+                              <DetailsVisible>0</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants>
+                                <Action>
+                                  <Position>4588;616</Position>
+                                  <StyleLien>2</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>Parcours de tous les tags de la question et diminue dans l'ontologie</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants>
+                                    <Iteration>
+                                      <Position>4674.5;691.5</Position>
+                                      <StyleLien>0</StyleLien>
+                                      <Titre>pour tous les tags de la question (i)</Titre>
+                                      <IterationFixe>1</IterationFixe>
+                                      <Enfants>
+                                        <Condition>
+                                          <Position>4595.5;785</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <estUnique>1</estUnique>
+                                          <operationsLogiques>
+                                            <operation>
+                                              <Titre>i.niveau == niveauActuel</Titre>
+                                              <Enfants>
+                                                <ConditionMultiple>
+                                                  <Position>4464.5;851</Position>
+                                                  <StyleLien>0</StyleLien>
+                                                  <Titre>i</Titre>
+                                                  <operationsLogiques>
+                                                    <operation>
+                                                      <Titre>Statut Moyen_1</Titre>
+                                                      <Enfants>
+                                                        <Action>
+                                                          <Position>4359;932</Position>
+                                                          <StyleLien>1</StyleLien>
+                                                          <PreAssertion>?</PreAssertion>
+                                                          <PostAssertion>?</PostAssertion>
+                                                          <Titre>ontolgie[niveauActuel][i] ← Statut::Facile </Titre>
+                                                          <DetailsVisible>1</DetailsVisible>
+                                                          <DetailsVideVisible>0</DetailsVideVisible>
+                                                          <Enfants/>
+                                                        </Action>
+                                                      </Enfants>
+                                                    </operation>
+                                                    <operation>
+                                                      <Titre>Statut Moyen_2</Titre>
+                                                      <Enfants>
+                                                        <Action>
+                                                          <Position>4571;930</Position>
+                                                          <StyleLien>1</StyleLien>
+                                                          <PreAssertion>?</PreAssertion>
+                                                          <PostAssertion>?</PostAssertion>
+                                                          <Titre>ontolgie[niveauActuel][i] ← Statut::Moyen_1</Titre>
+                                                          <DetailsVisible>1</DetailsVisible>
+                                                          <DetailsVideVisible>0</DetailsVideVisible>
+                                                          <Enfants/>
+                                                        </Action>
+                                                      </Enfants>
+                                                    </operation>
+                                                    <operation>
+                                                      <Titre>Statut Difficile</Titre>
+                                                      <Enfants>
+                                                        <Action>
+                                                          <Position>4780;930</Position>
+                                                          <StyleLien>1</StyleLien>
+                                                          <PreAssertion>?</PreAssertion>
+                                                          <PostAssertion>?</PostAssertion>
+                                                          <Titre>ontolgie[niveauActuel][i] ← Statut::Moyen_2</Titre>
+                                                          <DetailsVisible>1</DetailsVisible>
+                                                          <DetailsVideVisible>0</DetailsVideVisible>
+                                                          <Enfants/>
+                                                        </Action>
+                                                      </Enfants>
+                                                    </operation>
+                                                  </operationsLogiques>
+                                                </ConditionMultiple>
+                                              </Enfants>
+                                            </operation>
+                                            <operation>
+                                              <Titre>Sinon</Titre>
+                                              <Enfants/>
+                                            </operation>
+                                          </operationsLogiques>
+                                        </Condition>
+                                      </Enfants>
+                                    </Iteration>
+                                  </Enfants>
+                                </Action>
+                              </Enfants>
+                            </Action>
+                            <Action>
+                              <Position>5231;539</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Passage au niveau inferieur</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants>
+                                <Action>
+                                  <Position>5064;634</Position>
+                                  <StyleLien>2</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>Pacours des statut de tous les tags du niveauActuel</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants>
+                                    <Iteration>
+                                      <Position>5151.5;703.5</Position>
+                                      <StyleLien>1</StyleLien>
+                                      <Titre>pour tous les tags du niveauActuel (i)</Titre>
+                                      <IterationFixe>1</IterationFixe>
+                                      <Enfants>
+                                        <Condition>
+                                          <Position>5076.5;795</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <estUnique>1</estUnique>
+                                          <operationsLogiques>
+                                            <operation>
+                                              <Titre>ontolgie[niveauActuel][i] != Statut::facile </Titre>
+                                              <Enfants>
+                                                <Action>
+                                                  <Position>5070;864</Position>
+                                                  <StyleLien>1</StyleLien>
+                                                  <PreAssertion>?</PreAssertion>
+                                                  <PostAssertion>?</PostAssertion>
+                                                  <Titre>diminuer ← false</Titre>
+                                                  <DetailsVisible>1</DetailsVisible>
+                                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                                  <Enfants/>
+                                                </Action>
+                                              </Enfants>
+                                            </operation>
+                                            <operation>
+                                              <Titre>Sinon</Titre>
+                                              <Enfants/>
+                                            </operation>
+                                          </operationsLogiques>
+                                        </Condition>
+                                      </Enfants>
+                                    </Iteration>
+                                  </Enfants>
+                                </Action>
+                                <Action>
+                                  <Position>4934;634</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>diminuer ← true</Titre>
+                                  <DetailsVisible>0</DetailsVisible>
+                                  <DetailsVideVisible>1</DetailsVideVisible>
+                                  <Enfants/>
+                                </Action>
+                                <Condition>
+                                  <Position>5413.5;632</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <estUnique>1</estUnique>
+                                  <operationsLogiques>
+                                    <operation>
+                                      <Titre>diminuer ? &amp;&amp; niveauActuel != min</Titre>
+                                      <Enfants>
+                                        <Action>
+                                          <Position>5371;763</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <PreAssertion>?</PreAssertion>
+                                          <PostAssertion>?</PostAssertion>
+                                          <Titre>niveauActuel - 1</Titre>
+                                          <DetailsVisible>1</DetailsVisible>
+                                          <DetailsVideVisible>0</DetailsVideVisible>
+                                          <Enfants/>
+                                        </Action>
+                                        <Action>
+                                          <Position>5512;762</Position>
+                                          <StyleLien>1</StyleLien>
+                                          <PreAssertion>?</PreAssertion>
+                                          <PostAssertion>?</PostAssertion>
+                                          <Titre>changementNiveau ← true</Titre>
+                                          <DetailsVisible>1</DetailsVisible>
+                                          <DetailsVideVisible>0</DetailsVideVisible>
+                                          <Enfants/>
+                                        </Action>
+                                      </Enfants>
+                                    </operation>
+                                    <operation>
+                                      <Titre>validé ? &amp;&amp; niveauActuel == max</Titre>
+                                      <Enfants/>
+                                    </operation>
+                                  </operationsLogiques>
+                                </Condition>
+                              </Enfants>
+                            </Action>
+                            <Action>
+                              <Position>5802;537</Position>
+                              <StyleLien>2</StyleLien>
+                              <PreAssertion>?</PreAssertion>
+                              <PostAssertion>?</PostAssertion>
+                              <Titre>Modification des stats de la question</Titre>
+                              <DetailsVisible>1</DetailsVisible>
+                              <DetailsVideVisible>0</DetailsVideVisible>
+                              <Enfants>
+                                <Procedure>
+                                  <Position>5832;618</Position>
+                                  <StyleLien>1</StyleLien>
+                                  <PreAssertion>?</PreAssertion>
+                                  <PostAssertion>?</PostAssertion>
+                                  <Titre>modifStatsQuestion</Titre>
+                                  <DetailsVisible>1</DetailsVisible>
+                                  <DetailsVideVisible>0</DetailsVideVisible>
+                                  <Enfants/>
+                                </Procedure>
+                              </Enfants>
+                            </Action>
+                          </Enfants>
                         </operation>
                       </operationsLogiques>
                     </Condition>
                   </Enfants>
                 </Action>
                 <Action>
-                  <Position>3127;376</Position>
+                  <Position>5844;386</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -521,7 +853,7 @@ id_Ontologie</PreAssertion>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>3420;360</Position>
+                  <Position>6289;383</Position>
                   <StyleLien>2</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>listeDeReponse</PostAssertion>
@@ -530,7 +862,7 @@ id_Ontologie</PreAssertion>
                   <DetailsVideVisible>0</DetailsVideVisible>
                   <Enfants>
                     <Condition>
-                      <Position>3386.5;443</Position>
+                      <Position>6255.5;466</Position>
                       <StyleLien>0</StyleLien>
                       <estUnique>0</estUnique>
                       <operationsLogiques>
@@ -542,7 +874,7 @@ id_Ontologie</PreAssertion>
                           <Titre>Sinon</Titre>
                           <Enfants>
                             <Action>
-                              <Position>3523;523</Position>
+                              <Position>6392;546</Position>
                               <StyleLien>1</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>listeDeReponse</PostAssertion>
@@ -561,16 +893,26 @@ id_Ontologie</PreAssertion>
             </Iteration>
           </Enfants>
         </Action>
+        <Action>
+          <Position>2791;210</Position>
+          <StyleLien>1</StyleLien>
+          <PreAssertion>?</PreAssertion>
+          <PostAssertion>?</PostAssertion>
+          <Titre>Affichage des stats</Titre>
+          <DetailsVisible>1</DetailsVisible>
+          <DetailsVideVisible>0</DetailsVideVisible>
+          <Enfants/>
+        </Action>
       </Enfants>
     </Action>
     <Sortie>
-      <Position>1978;510</Position>
+      <Position>2401;514</Position>
     </Sortie>
     <Sortie>
-      <Position>3380;681</Position>
+      <Position>4079;694</Position>
     </Sortie>
     <Sortie>
-      <Position>3429;494</Position>
+      <Position>6298;517</Position>
     </Sortie>
   </Elements>
 </Algorithme>
