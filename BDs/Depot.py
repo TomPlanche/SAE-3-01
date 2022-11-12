@@ -25,10 +25,13 @@ class Depot:
 
         self.qcm = None
 
-        with open("./scriptSQLOEOEOE.txt", "a") as f:
-            f.write(f"INSERT INTO DEPOT VALUES ('{self.id_depot}', {self.statut_b}, '{self.date_ouverture}', '{self.date_fermeture}', '{self.id_enseignant}');\n")
+        message = f"-- INSERT Depôt {self.id_depot} --\n" \
+                  f"INSERT INTO DEPOT VALUES ('{self.id_depot}', {self.statut_b}, '{self.date_ouverture}', '{self.date_fermeture}', '{self.id_enseignant}');\n" \
 
-        print(f"INSERT INTO DEPOT VALUES ('{self.id_depot}', {self.statut_b}, '{self.date_ouverture}', '{self.date_fermeture}', '{self.id_enseignant}')")
+        with open("./scriptSQLOEOEOE.txt", "a") as f:
+            f.write(message)
+
+        print(message)
 
     def lier_qcm(self, qcm):
         """

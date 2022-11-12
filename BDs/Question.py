@@ -1,4 +1,3 @@
-
 from enum import Enum
 
 
@@ -50,12 +49,12 @@ class Question:
     def lier_reponse(self, reponse):
         """
         Lier les réponses à la question
-        :param reponss: Une Réponses
+        :param reponse: Une Réponses
         :type reponse: dict
         """
         self.reponses.append(reponse)
 
-    def lier_tags(self, *tags):
+    def lier_tags(self, *tags) -> None:
         """
         Lier les tags à la question
         :param tags: Une liste de tags
@@ -64,38 +63,40 @@ class Question:
         for tag in tags:
             self.tags.append(tag)
 
-    def creer_question(self) -> str:
+    def creer_question(self) -> None:
         """
         Création de la question en SQLite
         :return: Requête SQL
         :rtype: str
         """
 
-        message = ""
+        message = f"-- INSERT QUESTION {self.id_question} --\n"
 
-        message += "INSERT INTO Question values (" \
-                        f"'{self.id_question}', " \
-                        f"'{self.etat_question}', " \
-                        f"'{self.titre}', " \
-                        f"'{self.id_typeQuestion}', " \
-                        f"'{self.difficulte}', " \
-                        f"'{self.id_etudiant}', " \
-                        f"'{self.id_depot}'" \
-                        ");\n" \
+        message += "INSERT INTO QUESTION values ("\
+                   f"'{self.id_question}', "\
+                   f"'{self.etat_question}', "\
+                   f"'{self.titre}', "\
+                   f"'{self.id_typeQuestion}', "\
+                   f"'{self.difficulte}', "\
+                   f"'{self.id_etudiant}', "\
+                   f"'{self.id_depot}'"\
+                   ");\n"
 
         for reponse in self.reponses:
             print(reponse)
-            message += "INSERT INTO QUESTION_A_REPONSE values (" \
-                            f"'{self.id_question}', " \
-                            f"'{reponse['id_reponse']}'," \
-                            f"{int(reponse['est_bonne'])}" \
-                            ");\n"
+            message += "-- INSERT QUESTION_A_REPONSE\n"\
+                       "INSERT INTO QUESTION_A_REPONSE values ("\
+                       f"'{self.id_question}', "\
+                       f"'{reponse['id_reponse']}',"\
+                       f"{int(reponse['est_bonne'])}"\
+                       ");\n"
 
         for tag in self.tags:
-            message += "INSERT INTO TAG_LIE_A_QUESTION values (" \
-                            f"'{self.id_question}', " \
-                            f"'{tag.nom_tag}'" \
-                            ");\n"
+            message += "-- INSERT TAG_LIE_A_QUESTION\n"\
+                       "INSERT INTO TAG_LIE_A_QUESTION values ("\
+                       f"'{self.id_question}', "\
+                       f"'{tag.nom_tag}'"\
+                       ");\n"
 
         with open("./scriptSQLOEOEOE.txt", "a") as f:
             f.write(message)

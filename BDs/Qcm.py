@@ -19,9 +19,12 @@ class Qcm:
 
         self.questions = []
 
+        message = f"-- INSERT QCM {self.id_qcm} --\n" \
+                  f"INSERT INTO QCM VALUES ('{self.id_qcm}', '{self.titre}', '{self.description}', {self.etat_b}, '{self.id_enseignant}');\n"
+
         with open("./scriptSQLOEOEOE.txt", "a") as f:
-            f.write(f"INSERT INTO QCM VALUES ('{self.id_qcm}', '{self.titre}', '{self.description}', {self.etat_b}, '{self.id_enseignant}');\n")
-        print(f"INSERT INTO QCM VALUES ('{self.id_qcm}', '{self.titre}', '{self.description}', {self.etat_b}, '{self.id_enseignant}')")
+            f.write(message)
+        print(message)
 
     def lier_questions(self, *questions):
         """

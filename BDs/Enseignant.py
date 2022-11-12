@@ -14,9 +14,12 @@ class Enseignant:
         self.matiere = matiere
         self.nationalite = nationalite
 
+        message = f"-- INSERT Enseignant {self.id_enseignant} --\n" \
+                  f"INSERT INTO ENSEIGNANT VALUES ('{self.id_enseignant}', '{self.nom_enseignant}', '{self.prenom_enseignant}', '{self.matiere}', '{self.nationalite}');\n"
+
         with open("./scriptSQLOEOEOE.txt", "a") as f:
-            f.write(f"INSERT INTO ENSEIGNANT VALUES ('{self.id_enseignant}', '{self.nom_enseignant}', '{self.prenom_enseignant}', '{self.matiere}', '{self.nationalite}');\n")
-        print(f"INSERT INTO ENSEIGNANT VALUES ('{self.id_enseignant}', '{self.nom_enseignant}', '{self.prenom_enseignant}', '{self.matiere}', '{self.nationalite}')")
+            f.write(message)
+        print(message)
 
     def __str__(self):
         return self.id_enseignant

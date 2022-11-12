@@ -11,9 +11,12 @@ class Tag:
         self.nom_tag = nom_tag
         self.id_enseignant = id_enseignant
 
+        message = f"-- INSERT Tag {self.nom_tag} --\n" \
+                  f"INSERT INTO TAG VALUES ('{self.nom_tag}', '{self.id_enseignant}');\n"
+
         with open("./scriptSQLOEOEOE.txt", "a") as f:
-            f.write(f"INSERT INTO TAG VALUES ('{self.nom_tag}', '{self.id_enseignant}');\n")
-        print(f"INSERT INTO TAG VALUES ('{self.nom_tag}', '{self.id_enseignant}')")
+            f.write(message)
+        print(message)
 
     def __str__(self):
         return self.nom_tag

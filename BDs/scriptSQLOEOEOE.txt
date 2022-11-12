@@ -1,0 +1,156 @@
+drop table if exists ETUDIANT;
+drop table if exists ENSEIGNANT;
+drop table if exists DEPOT;
+drop table if exists REPONSE;
+drop table if exists TAG;
+drop table if exists QCM;
+drop table if exists QUESTION;
+drop table if exists QUESTION_A_REPONSE;
+drop table if exists TAG_LIE_A_QUESTION;
+drop table if exists QUESTION_LIEE_A_QCM;
+drop table if exists TYPE_QUESTION;
+drop table if exists SENTRAINE;
+
+create table if not exists ETUDIANT (
+    id_etudiant TEXT PRIMARY KEY,
+    nom_etudiant TEXT NOT NULL,
+    prenom_etudiant TEXT NOT NULL,
+    td INTEGER NOT NULL,
+    tp INTEGER NOT NULL
+);
+
+create table if not exists ENSEIGNANT (
+    id_enseignant TEXT PRIMARY KEY,
+    nom_enseignnat TEXT NOT NULL,
+    prenom_enseignant TEXT NOT NULL,
+    matiere TEXT NOT NULL,
+    nationalite TEXT NOT NULL
+);
+
+create table if not exists DEPOT (
+    id_depot TEXT PRIMARY KEY,
+    statut_b INTEGER NOT NULL DEFAULT 0 CHECK (statut_b IN (0, 1)),
+    date_ouverture DATE NOT NULL,
+    date_fermeture DATE NOT NULL,
+    id_enseignant TEXT NOT NULL,
+
+    FOREIGN KEY (id_enseignant) REFERENCES ENSEIGNANT(id_enseignant)
+);
+
+create table if not exists REPONSE (
+    label_reponse TEXT PRIMARY KEY
+);
+
+create table if not exists TAG (
+    nom_tag TEXT PRIMARY KEY,
+    id_enseignant TEXT NOT NULL,
+
+    FOREIGN KEY (id_enseignant) REFERENCES ENSEIGNANT(id_enseignant)
+);
+
+create table if not exists QCM (
+    id_qcm TEXT PRIMARY KEY,
+    titre TEXT NOT NULL,
+    description TEXT NOT NULL,
+    etat_b INTEGER NOT NULL DEFAULT 0 CHECK (etat_b IN (0, 1)),
+    id_enseignant TEXT NOT NULL,
+
+    FOREIGN KEY (id_enseignant) REFERENCES ENSEIGNANT(id_enseignant)
+);
+
+
+create table if not exists TYPE_QUESTION (
+    id_type_question TEXT PRIMARY KEY,
+    nom_type_question TEXT NOT NULL
+);
+
+
+create table if not exists QUESTION (
+    id_question TEXT primary key,
+    etat_question TEXT not null check  (lower(etat_question) IN ('a_verifier', 'modifiee', 'acceptee')),
+    titre_question TEXT not null,
+    id_type TEXT not null,
+    difficulte TEXT not null default 'facile' check ( lower(difficulte) IN ('facile', 'moyen', 'difficile')),
+    id_etudiant TEXT not null,
+    id_depot TEXT not null,
+
+    foreign key (id_type) references TYPE_QUESTION(id_type_question),
+    foreign key (id_etudiant) references ETUDIANT(id_etudiant) ,
+    foreign key (id_depot) references DEPOT(id_depot)
+);
+
+create table if not exists QUESTION_A_REPONSE (
+    id_question TEXT not null,
+    id_reponse TEXT not null,
+    etat_veritee INTEGER not null default 0 check (etat_veritee IN (0, 1)),
+
+    primary key (id_question, id_reponse),
+    foreign key (id_question) references QUESTION(id_question),
+    foreign key (id_reponse) references REPONSE(label_reponse)
+);
+
+create table if not exists TAG_LIE_A_QUESTION (
+    id_question TEXT not null,
+    nom_tag TEXT not null,
+
+    foreign key (id_question) references QUESTION(id_question),
+    foreign key (nom_tag) references TAG(nom_tag)
+);
+
+create table if not exists QUESTION_LIEE_A_QCM (
+    id_question TEXT not null,
+    id_qcm TEXT not null,
+
+    foreign key (id_question) references QUESTION(id_question),
+    foreign key (id_qcm) references QCM(id_qcm)
+);
+
+
+create table if not exists SENTRAINE (
+    id_etudiant TEXT not null,
+    id_qcm TEXT not null,
+    -- date_debut DATE - date de debut de l'entrainement
+    date_debut DATE not null,
+    date_fin DATE,
+    note INTEGER ,
+
+    foreign key (id_etudiant) references ETUDIANT(id_etudiant),
+    foreign key (id_qcm) references QCM(id_qcm)
+);
+-- INSERT Étudiant ET0001 --
+INSERT INTO ETUDIANT VALUES ('ET0001', 'Planche', 'Tom', 1, 2);
+-- INSERT Étudiant ET0002 --
+INSERT INTO ETUDIANT VALUES ('ET0002', 'Montbord', 'Tom', 1, 2);
+-- INSERT Étudiant ET0004 --
+INSERT INTO ETUDIANT VALUES ('ET0004', 'Hériveau', 'Mathis', 1, 2);
+-- INSERT Enseignant EN0001 --
+INSERT INTO ENSEIGNANT VALUES ('EN0001', 'Bruyère', 'Marie', 'Mathématiques', 'Française');
+-- INSERT Enseignant EN0002 --
+INSERT INTO ENSEIGNANT VALUES ('EN0002', 'Marquesuzaà', 'Christophe', 'Chef de département - Gestion de projet', 'Française');
+-- INSERT Enseignant EN0003 --
+INSERT INTO ENSEIGNANT VALUES ('EN0003', 'Etchevery', 'Patrick', 'Programmation', 'Française');
+-- INSERT Depôt DEP0001 --
+INSERT INTO DEPOT VALUES ('DEP0001', True, '10/11/2022 08:35', '10/02/2023 08:35', 'EN0001');
+-- INSERT Réponse Vrai --
+INSERT INTO REPONSE VALUES ('Vrai');
+-- INSERT Réponse Faux --
+INSERT INTO REPONSE VALUES ('Faux');
+-- INSERT Tag Mathématiques --
+INSERT INTO TAG VALUES ('Mathématiques', 'EN0001');
+-- INSERT Tag Programmation --
+INSERT INTO TAG VALUES ('Programmation', 'EN0003');
+-- INSERT QCM QCM0001 --
+INSERT INTO QCM VALUES ('QCM0001', 'QCM 1', 'QCM 1', True, 'EN0001');
+INSERT INTO TYPE_QUESTION VALUES ('TQ001', 'qcm');
+INSERT INTO TYPE_QUESTION VALUES ('TQ002', 'qcu');
+INSERT INTO TYPE_QUESTION VALUES ('TQ003', 'flashcard');
+-- INSERT QUESTION Q0001 --
+INSERT INTO QUESTION values ('Q0001', 'a_verifier', 'Question 1', 'qcm', 'facile', 'ET0001', 'QCM0001');
+-- INSERT QUESTION_A_REPONSE
+INSERT INTO QUESTION_A_REPONSE values ('Q0001', 'Vrai',1);
+-- INSERT QUESTION_A_REPONSE
+INSERT INTO QUESTION_A_REPONSE values ('Q0001', 'Faux',0);
+-- INSERT TAG_LIE_A_QUESTION
+INSERT INTO TAG_LIE_A_QUESTION values ('Q0001', 'Mathématiques');
+-- INSERT TAG_LIE_A_QUESTION
+INSERT INTO TAG_LIE_A_QUESTION values ('Q0001', 'Programmation');
