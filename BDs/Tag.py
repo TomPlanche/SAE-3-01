@@ -1,11 +1,25 @@
+"""
+Fichier contenant la classe Tag
+"""
+
+from main import ecrireDansFichier
+
 
 class Tag:
     """
-    nom_tag TEXT PRIMARY KEY,
-    id_enseignant TEXT NOT NULL,
-    niveau INTEGER NOT NULL CHECK (niveau IN (1, 2, 3)),
+    Classe représentant un tag d'une question.
 
-    FOREIGN KEY (id_enseignant) REFERENCES ENSEIGNANT(id_enseignant)
+    Code SQL de la table TAG:
+    create table if not exists TAG (
+        nom_tag TEXT PRIMARY KEY,
+        id_enseignant TEXT NOT NULL,
+
+        FOREIGN KEY (id_enseignant) REFERENCES ENSEIGNANT(id_enseignant)
+    );
+
+    Attributes:
+        nom_tag (str): Nom du tag
+        id_enseignant (str): Identifiant de l'enseignant
     """
     def __init__(self, nom_tag: str, id_enseignant: str):
         self.nom_tag = nom_tag
@@ -14,12 +28,22 @@ class Tag:
         message = f"-- INSERT Tag {self.nom_tag} --\n" \
                   f"INSERT INTO TAG VALUES ('{self.nom_tag}', '{self.id_enseignant}');\n"
 
-        with open("./scriptSQLOEOEOE.txt", "a") as f:
-            f.write(message)
+        ecrireDansFichier(message)
         print(message)
 
     def __str__(self):
+        """
+        Méthode permettant d'afficher les informations du tag
+
+        Returns:
+            str: nom du tag
+        """
         return self.nom_tag
 
     def __repr__(self):
-        return self.nom_tag
+        """
+        Méthode permettant d'afficher les informations du tag
+
+        Returns:
+            str: nom du tag
+        """

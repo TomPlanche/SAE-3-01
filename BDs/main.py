@@ -1,3 +1,16 @@
+"""
+Fichier principal de la création de la base de données
+
+Ordre de l'inseration des données dans la base de données:
+    1. Étudiants
+    2. Enseignants
+    3. Dépots
+    4. Réponses
+    5. Tags
+    6. QCMs
+    7. Types de questions
+    8. Questions
+"""
 
 from Depot import Depot
 from Enseignant import Enseignant
@@ -7,10 +20,23 @@ from Question import Question, Etat, Difficulte, Type
 from Reponse import Reponse
 from Tag import Tag
 
+NOM_FICHIER = "scriptSQLOEOEOE.txt"
+
+
+def ecrireDansFichier(message) -> None:
+    """
+    Fonction permettant d'écrire dans le fichier de création de la base de données
+    """
+    with open(NOM_FICHIER, "a") as f:
+        f.write(message)
+        print(message)
+
+
 def dropAndCreateClasses():
-    # erase all things in file
-    with open("./scriptSQLOEOEOE.txt", "w") as f:
-        f.write("")
+    """
+    Fonction permettant de supprimer et recréer les tables de la base de données
+    """
+    ecrireDansFichier("")
 
     message = """drop table if exists ETUDIANT;
 drop table if exists ENSEIGNANT;
@@ -131,9 +157,8 @@ create table if not exists SENTRAINE (
     foreign key (id_etudiant) references ETUDIANT(id_etudiant),
     foreign key (id_qcm) references QCM(id_qcm)
 );\n"""
-    with open("./scriptSQLOEOEOE.txt", "a") as f:
-        f.write(message)
-        print(message)
+
+    ecrireDansFichier(message)
 
 
 if __name__ == '__main__':
@@ -144,7 +169,8 @@ if __name__ == '__main__':
     etudiant_3 = Etudiant("ET0004", "Hériveau", "Mathis", 1, 2)
 
     enseignant_1 = Enseignant("EN0001", "Bruyère", "Marie", "Mathématiques", "Française")
-    enseignant_2 = Enseignant("EN0002", "Marquesuzaà", "Christophe", "Chef de département - Gestion de projet", "Française")
+    enseignant_2 = Enseignant("EN0002", "Marquesuzaà", "Christophe", "Chef de département - Gestion de projet",
+                              "Française")
     enseignant_3 = Enseignant("EN0003", "Etchevery", "Patrick", "Programmation", "Française")
 
     depot_1 = Depot("DEP0001", True, enseignant_1)
@@ -157,10 +183,13 @@ if __name__ == '__main__':
 
     qcm_1 = Qcm("QCM0001", "QCM 1", "QCM 1", True, enseignant_1)
 
-    for i, type in enumerate(Type):
-        with open("./scriptSQLOEOEOE.txt", "a") as f:
-            f.write(f"INSERT INTO TYPE_QUESTION VALUES ('TQ00{i + 1}', '{type.name}');\n")
-        print(f"INSERT INTO TYPE_QUESTION VALUES ('TQ00{i + 1}', '{type.name}')")
+    # Création des types de questions
+    for i, typeEnum in enumerate(Type):
+        message_type = f"INSERT INTO TYPE_QUESTION VALUES ('TQ00{i + 1}', '{typeEnum.name}');\n"
+
+        ecrireDansFichier(message_type)
+
+        print(message_type)
 
     question_1 = Question(
             "Q0001",
@@ -177,4 +206,3 @@ if __name__ == '__main__':
     question_1.lier_tags(tag_1, tag_2)
 
     question_1.creer_question()
-
