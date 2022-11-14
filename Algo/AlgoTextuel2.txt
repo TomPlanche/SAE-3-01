@@ -29,8 +29,8 @@ reponseEffectuee = 0
 					- Si la positionDifficulte = difficile : 
 						-> on augmente la positionPrerequis 
 						-> on met la position a facile
-						-> on ajoute les questions du prochains prérequis plus dur (caca et culcul)
-						-> on supprime les questions du prérequis plus simple (pipi)
+						-> on ajoute les questions du prochains prérequis plus dur
+						-> on supprime les questions du prérequis plus simple
 					- Sinon : 
 						-> on augmente la positionDifficulte
 
@@ -38,8 +38,8 @@ reponseEffectuee = 0
 					- Si la positionDifficulte = facile : 
 						-> positionDifficulte = Moyenne_2 
 						-> on diminue la positionPrerequis (sauf si positionPrerequis est a 1)
-						-> on supprime les questions du prérequis plus dur (caca et culcul)
-						-> on remet les questions du prérequis plus simple (pipi)
+						-> on supprime les questions du prérequis plus dur
+						-> on remet les questions du prérequis plus simple
 					- Sinon : 
 						-> on diminue la positionDifficulte
 
