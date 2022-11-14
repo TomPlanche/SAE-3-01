@@ -7,7 +7,7 @@ from dateutil.relativedelta import relativedelta
 from Qcm import Qcm
 from main import ecrireDansFichier
 
-FORMAT_DATE = "%d/%m/%Y %H:%M" # Format de date utilisé dans le programme - jour/mois/année heure:minute
+FORMAT_DATE = "%d/%m/%Y %H:%M"  # Format de date utilisé dans le programme - jour/mois/année heure:minute
 
 
 class Depot:
@@ -32,6 +32,7 @@ class Depot:
         date_ouverture (str, optional): Date d'ouverture du dépôt. Defaults to None.
         date_fermeture (str, optional): Date de fermeture du dépôt. Defaults to None.
     """
+
     def __init__(
             self,
             id_depot: str,
