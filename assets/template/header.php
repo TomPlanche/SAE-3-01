@@ -7,7 +7,6 @@
             <img src=\"../../Images/auto-qcm-low-resolution-logo-white-on-black-background.png\" alt=\"logo\"></img>
             <ul>
                 <li><a href='../../../Accueil.php'>Accueil</a></li>
-                <li><a href='../Gérer%20étudiant/A.php'>Gérer étudiant</a></li>
             </ul>
         </nav>
         

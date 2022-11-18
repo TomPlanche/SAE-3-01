@@ -9,7 +9,6 @@
     <img src="assets/Images/auto-qcm-low-resolution-logo-white-on-black-background.png" alt="logo">
     <ul>
         <li><a href='Accueil.php'>Accueil</a></li>
-        <li><a href='./assets/php/Gérer%20étudiant/A.php'>Gérer étudiant</a></li>
     </ul>
 </nav>
 
@@ -41,8 +40,8 @@
     254 -10 438 21 605 103 172 84 315 254 390 463 74 203 108 420 117 736 34 1230 -451 2439 -1332 3320 -707 707 -1608 1156 -2597 1294 -206 29 -201 30
     -283 -33z"/> </g></svg>
                 <label>E T U D I A N T</label>
-                <!-- Bouton qui envoie sur la page asset/php/connexion.php avec le type etudiant -->
-                <button type="button" onclick="window.location.href='assets/php/connexion.php?type=etudiant'">Connexion</button>
+                <!-- Bouton qui envoie sur la page asset/php/connexion.php avec le type etudiant, onclick : envoyer sur connexion.php et mettre le cookie type-->
+                <button onclick="document.location.href='./assets/php/cookie.php?type=etudiant'">Connexion</button>
             </div>
 
             <br>
@@ -91,7 +90,7 @@
                 </svg>
                 <label>P R O F E S S E U R</label>
                 <!-- Bouton qui envoie sur la page asset/php/connexion.php avec le type professeur -->
-                <button type="button" onclick="window.location.href='assets/php/connexion.php?type=enseignant'">Connexion</button>
+                <button type="button" onclick="window.location.href='assets/php/cookie.php?type=enseignant'">Connexion</button>
 
             </div>
             <br>
@@ -165,7 +164,7 @@
                 </svg>
                 <label>A D M I N</label>
                 <!-- Bouton qui envoie sur la page asset/php/connexion.php avec le type ADMIN -->
-                <button type="button" onclick="window.location.href='assets/php/connexion.php?type=admin'">Connexion</button>
+                <button type="button" onclick="window.location.href='assets/php/cookie.php?type=admin'">Connexion</button>
             </div>
         </div>
     </main>
