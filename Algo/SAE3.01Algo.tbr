@@ -1,13 +1,13 @@
-<?xml version="1.1"?>
+<?xml version="1.0"?>
 <!DOCTYPE Tabula_Rasa>
 <Algorithme>
   <nom>Algorithme</nom>
-  <date_creation>10/11/2022 12:09</date_creation>
+  <date_creation>17/11/2022 11:02</date_creation>
   <Elements>
     <Action>
-      <Position>2212;63</Position>
+      <Position>2018;51</Position>
       <StyleLien>2</StyleLien>
-      <PreAssertion>BD
+      <PreAssertion>BD&#xd;
 id_Ontologie</PreAssertion>
       <PostAssertion>?</PostAssertion>
       <Titre>QCM dynamique</Titre>
@@ -17,7 +17,7 @@ id_Ontologie</PreAssertion>
         <Action>
           <Position>611;180</Position>
           <StyleLien>2</StyleLien>
-          <PreAssertion>BD
+          <PreAssertion>BD&#xd;
 id_Ontologie</PreAssertion>
           <PostAssertion>[parametre créé]</PostAssertion>
           <Titre>Initialisation</Titre>
@@ -25,9 +25,9 @@ id_Ontologie</PreAssertion>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Action>
-              <Position>87;300</Position>
+              <Position>25;304</Position>
               <StyleLien>2</StyleLien>
-              <PreAssertion>BD
+              <PreAssertion>BD&#xd;
 id_Ontologie</PreAssertion>
               <PostAssertion>banqueQ</PostAssertion>
               <Titre>Connection</Titre>
@@ -35,7 +35,7 @@ id_Ontologie</PreAssertion>
               <DetailsVideVisible>1</DetailsVideVisible>
               <Enfants>
                 <Action>
-                  <Position>97;389</Position>
+                  <Position>9;431</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -45,7 +45,7 @@ id_Ontologie</PreAssertion>
                   <Enfants/>
                 </Action>
                 <Procedure>
-                  <Position>287;390</Position>
+                  <Position>199;429</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -57,7 +57,7 @@ id_Ontologie</PreAssertion>
               </Enfants>
             </Action>
             <Action>
-              <Position>665;292</Position>
+              <Position>714;298</Position>
               <StyleLien>2</StyleLien>
               <PreAssertion>?</PreAssertion>
               <PostAssertion>[parametre créé]</PostAssertion>
@@ -66,7 +66,7 @@ id_Ontologie</PreAssertion>
               <DetailsVideVisible>0</DetailsVideVisible>
               <Enfants>
                 <Action>
-                  <Position>517;437</Position>
+                  <Position>404;543</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -76,7 +76,7 @@ id_Ontologie</PreAssertion>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>459;380</Position>
+                  <Position>390;425</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -86,7 +86,7 @@ id_Ontologie</PreAssertion>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>646;381</Position>
+                  <Position>593;427</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -96,7 +96,7 @@ id_Ontologie</PreAssertion>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>885;382</Position>
+                  <Position>887;429</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -106,7 +106,7 @@ id_Ontologie</PreAssertion>
                   <Enfants/>
                 </Action>
                 <Action>
-                  <Position>1099;382</Position>
+                  <Position>1077;423</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -116,7 +116,7 @@ id_Ontologie</PreAssertion>
                   <Enfants/>
                 </Action>
                 <Procedure>
-                  <Position>775;444</Position>
+                  <Position>642;538</Position>
                   <StyleLien>1</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -128,7 +128,7 @@ id_Ontologie</PreAssertion>
               </Enfants>
             </Action>
             <Action>
-              <Position>1119;291</Position>
+              <Position>1139;308</Position>
               <StyleLien>1</StyleLien>
               <PreAssertion>?</PreAssertion>
               <PostAssertion>?</PostAssertion>
@@ -149,7 +149,7 @@ id_Ontologie</PreAssertion>
           <DetailsVideVisible>1</DetailsVideVisible>
           <Enfants>
             <Iteration>
-              <Position>2151.5;265.5</Position>
+              <Position>2171.5;286.5</Position>
               <StyleLien>1</StyleLien>
               <Titre>?</Titre>
               <IterationFixe>0</IterationFixe>
@@ -164,7 +164,7 @@ id_Ontologie</PreAssertion>
                   <DetailsVideVisible>0</DetailsVideVisible>
                   <Enfants>
                     <Action>
-                      <Position>1541;471</Position>
+                      <Position>1586;511</Position>
                       <StyleLien>1</StyleLien>
                       <PreAssertion>?</PreAssertion>
                       <PostAssertion>?</PostAssertion>
@@ -174,7 +174,7 @@ id_Ontologie</PreAssertion>
                       <Enfants/>
                     </Action>
                     <Action>
-                      <Position>1964;474</Position>
+                      <Position>2017;513</Position>
                       <StyleLien>2</StyleLien>
                       <PreAssertion>?</PreAssertion>
                       <PostAssertion>?</PostAssertion>
@@ -183,7 +183,7 @@ id_Ontologie</PreAssertion>
                       <DetailsVideVisible>0</DetailsVideVisible>
                       <Enfants>
                         <Action>
-                          <Position>1780;575</Position>
+                          <Position>1880;650</Position>
                           <StyleLien>1</StyleLien>
                           <PreAssertion>?</PreAssertion>
                           <PostAssertion>?</PostAssertion>
@@ -193,7 +193,7 @@ id_Ontologie</PreAssertion>
                           <Enfants/>
                         </Action>
                         <Condition>
-                          <Position>2089.5;579</Position>
+                          <Position>2189.5;654</Position>
                           <StyleLien>1</StyleLien>
                           <estUnique>1</estUnique>
                           <operationsLogiques>
@@ -201,7 +201,7 @@ id_Ontologie</PreAssertion>
                               <Titre>déjaVu.lenght () > 5</Titre>
                               <Enfants>
                                 <Action>
-                                  <Position>2052;662</Position>
+                                  <Position>2087;788</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -221,7 +221,7 @@ id_Ontologie</PreAssertion>
                       </Enfants>
                     </Action>
                     <Action>
-                      <Position>1242;496</Position>
+                      <Position>1259;525</Position>
                       <StyleLien>2</StyleLien>
                       <PreAssertion>?</PreAssertion>
                       <PostAssertion>?</PostAssertion>
@@ -230,7 +230,7 @@ id_Ontologie</PreAssertion>
                       <DetailsVideVisible>0</DetailsVideVisible>
                       <Enfants>
                         <Condition>
-                          <Position>1052.5;641</Position>
+                          <Position>1040.5;681</Position>
                           <StyleLien>1</StyleLien>
                           <estUnique>1</estUnique>
                           <operationsLogiques>
@@ -238,7 +238,7 @@ id_Ontologie</PreAssertion>
                               <Titre>changementNiveau</Titre>
                               <Enfants>
                                 <Procedure>
-                                  <Position>1100;731</Position>
+                                  <Position>1104;870</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -248,7 +248,7 @@ id_Ontologie</PreAssertion>
                                   <Enfants/>
                                 </Procedure>
                                 <Action>
-                                  <Position>849;730</Position>
+                                  <Position>831;871</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -266,7 +266,7 @@ id_Ontologie</PreAssertion>
                           </operationsLogiques>
                         </Condition>
                         <Procedure>
-                          <Position>1265;639</Position>
+                          <Position>1253;679</Position>
                           <StyleLien>1</StyleLien>
                           <PreAssertion>?</PreAssertion>
                           <PostAssertion>?</PostAssertion>
@@ -276,16 +276,16 @@ id_Ontologie</PreAssertion>
                           <Enfants/>
                         </Procedure>
                         <Condition>
-                          <Position>1543.5;630</Position>
+                          <Position>1656.5;683</Position>
                           <StyleLien>1</StyleLien>
                           <estUnique>1</estUnique>
                           <operationsLogiques>
                             <operation>
-                              <Titre>questionEffectuee 
+                              <Titre>questionEffectuee &#xd;
 != 0</Titre>
                               <Enfants>
                                 <Procedure>
-                                  <Position>1522;712</Position>
+                                  <Position>1508;873</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -326,7 +326,7 @@ id_Ontologie</PreAssertion>
                   <DetailsVideVisible>0</DetailsVideVisible>
                   <Enfants>
                     <Condition>
-                      <Position>2358.5;463</Position>
+                      <Position>2415.5;493</Position>
                       <StyleLien>1</StyleLien>
                       <estUnique>0</estUnique>
                       <operationsLogiques>
@@ -338,7 +338,7 @@ id_Ontologie</PreAssertion>
                           <Titre>Sinon</Titre>
                           <Enfants>
                             <Action>
-                              <Position>2419;561</Position>
+                              <Position>2519;642</Position>
                               <StyleLien>1</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>listeDeReponse</PostAssertion>
@@ -348,7 +348,7 @@ id_Ontologie</PreAssertion>
                               <Enfants/>
                             </Action>
                             <Action>
-                              <Position>2670;561</Position>
+                              <Position>2802;632</Position>
                               <StyleLien>1</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>?</PostAssertion>
@@ -364,7 +364,7 @@ id_Ontologie</PreAssertion>
                   </Enfants>
                 </Action>
                 <Action>
-                  <Position>4439;356</Position>
+                  <Position>4462;363</Position>
                   <StyleLien>2</StyleLien>
                   <PreAssertion>?</PreAssertion>
                   <PostAssertion>?</PostAssertion>
@@ -381,7 +381,7 @@ id_Ontologie</PreAssertion>
                           <Titre>listeReponseJuste == liseDeReponse</Titre>
                           <Enfants>
                             <Action>
-                              <Position>2981;545</Position>
+                              <Position>3012;559</Position>
                               <StyleLien>2</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>?</PostAssertion>
@@ -390,7 +390,7 @@ id_Ontologie</PreAssertion>
                               <DetailsVideVisible>0</DetailsVideVisible>
                               <Enfants>
                                 <Action>
-                                  <Position>2976;630</Position>
+                                  <Position>3006;680</Position>
                                   <StyleLien>2</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -399,13 +399,13 @@ id_Ontologie</PreAssertion>
                                   <DetailsVideVisible>0</DetailsVideVisible>
                                   <Enfants>
                                     <Iteration>
-                                      <Position>3062.5;705.5</Position>
-                                      <StyleLien>1</StyleLien>
+                                      <Position>3246.5;810.5</Position>
+                                      <StyleLien>0</StyleLien>
                                       <Titre>pour tous les tags de la question (i)</Titre>
                                       <IterationFixe>1</IterationFixe>
                                       <Enfants>
                                         <ConditionMultiple>
-                                          <Position>2811.5;852</Position>
+                                          <Position>2987.5;895</Position>
                                           <StyleLien>0</StyleLien>
                                           <Titre>i</Titre>
                                           <operationsLogiques>
@@ -413,7 +413,7 @@ id_Ontologie</PreAssertion>
                                               <Titre>Statut::Facile</Titre>
                                               <Enfants>
                                                 <Action>
-                                                  <Position>2590;953</Position>
+                                                  <Position>2550;1041</Position>
                                                   <StyleLien>1</StyleLien>
                                                   <PreAssertion>?</PreAssertion>
                                                   <PostAssertion>?</PostAssertion>
@@ -428,7 +428,7 @@ id_Ontologie</PreAssertion>
                                               <Titre>Statut::Moyen_1</Titre>
                                               <Enfants>
                                                 <Action>
-                                                  <Position>2797;951</Position>
+                                                  <Position>2846;1128</Position>
                                                   <StyleLien>1</StyleLien>
                                                   <PreAssertion>?</PreAssertion>
                                                   <PostAssertion>?</PostAssertion>
@@ -443,7 +443,7 @@ id_Ontologie</PreAssertion>
                                               <Titre>Statut::Moyen_2</Titre>
                                               <Enfants>
                                                 <Action>
-                                                  <Position>3006;949</Position>
+                                                  <Position>3200;1125</Position>
                                                   <StyleLien>1</StyleLien>
                                                   <PreAssertion>?</PreAssertion>
                                                   <PostAssertion>?</PostAssertion>
@@ -458,7 +458,7 @@ id_Ontologie</PreAssertion>
                                               <Titre>Statut::Difficile</Titre>
                                               <Enfants>
                                                 <Action>
-                                                  <Position>3217;946</Position>
+                                                  <Position>3483;1028</Position>
                                                   <StyleLien>1</StyleLien>
                                                   <PreAssertion>?</PreAssertion>
                                                   <PostAssertion>?</PostAssertion>
@@ -478,7 +478,7 @@ id_Ontologie</PreAssertion>
                               </Enfants>
                             </Action>
                             <Action>
-                              <Position>3619;553</Position>
+                              <Position>3675;590</Position>
                               <StyleLien>2</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>?</PostAssertion>
@@ -487,7 +487,7 @@ id_Ontologie</PreAssertion>
                               <DetailsVideVisible>0</DetailsVideVisible>
                               <Enfants>
                                 <Action>
-                                  <Position>3452;648</Position>
+                                  <Position>3634;747</Position>
                                   <StyleLien>2</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -496,13 +496,13 @@ id_Ontologie</PreAssertion>
                                   <DetailsVideVisible>0</DetailsVideVisible>
                                   <Enfants>
                                     <Iteration>
-                                      <Position>3539.5;717.5</Position>
-                                      <StyleLien>1</StyleLien>
+                                      <Position>3867.5;849.5</Position>
+                                      <StyleLien>0</StyleLien>
                                       <Titre>pour tous les tags du niveauActuel(i)</Titre>
                                       <IterationFixe>1</IterationFixe>
                                       <Enfants>
                                         <Condition>
-                                          <Position>3464.5;809</Position>
+                                          <Position>3700.5;910</Position>
                                           <StyleLien>1</StyleLien>
                                           <estUnique>1</estUnique>
                                           <operationsLogiques>
@@ -510,7 +510,7 @@ id_Ontologie</PreAssertion>
                                               <Titre>ontolgie[niveauActuel][i] != Statut::validé </Titre>
                                               <Enfants>
                                                 <Action>
-                                                  <Position>3497;878</Position>
+                                                  <Position>3857;1027</Position>
                                                   <StyleLien>1</StyleLien>
                                                   <PreAssertion>?</PreAssertion>
                                                   <PostAssertion>?</PostAssertion>
@@ -532,7 +532,7 @@ id_Ontologie</PreAssertion>
                                   </Enfants>
                                 </Action>
                                 <Action>
-                                  <Position>3322;648</Position>
+                                  <Position>3492;746</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -542,7 +542,7 @@ id_Ontologie</PreAssertion>
                                   <Enfants/>
                                 </Action>
                                 <Condition>
-                                  <Position>3801.5;646</Position>
+                                  <Position>4065.5;730</Position>
                                   <StyleLien>1</StyleLien>
                                   <estUnique>0</estUnique>
                                   <operationsLogiques>
@@ -550,7 +550,7 @@ id_Ontologie</PreAssertion>
                                       <Titre>validé ? &amp;&amp; niveauActuel != max</Titre>
                                       <Enfants>
                                         <Action>
-                                          <Position>3759;777</Position>
+                                          <Position>4210;905</Position>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>?</PreAssertion>
                                           <PostAssertion>?</PostAssertion>
@@ -560,7 +560,7 @@ id_Ontologie</PreAssertion>
                                           <Enfants/>
                                         </Action>
                                         <Action>
-                                          <Position>3900;776</Position>
+                                          <Position>4427;878</Position>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>?</PreAssertion>
                                           <PostAssertion>?</PostAssertion>
@@ -580,7 +580,7 @@ id_Ontologie</PreAssertion>
                               </Enfants>
                             </Action>
                             <Action>
-                              <Position>4215;540</Position>
+                              <Position>4472;568</Position>
                               <StyleLien>2</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>?</PostAssertion>
@@ -589,7 +589,7 @@ id_Ontologie</PreAssertion>
                               <DetailsVideVisible>0</DetailsVideVisible>
                               <Enfants>
                                 <Procedure>
-                                  <Position>4245;629</Position>
+                                  <Position>4620;702</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -601,7 +601,7 @@ id_Ontologie</PreAssertion>
                               </Enfants>
                             </Action>
                             <Action>
-                              <Position>3916;544</Position>
+                              <Position>3972;581</Position>
                               <StyleLien>1</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>?</PostAssertion>
@@ -616,7 +616,7 @@ id_Ontologie</PreAssertion>
                           <Titre>Sinon</Titre>
                           <Enfants>
                             <Action>
-                              <Position>4593;531</Position>
+                              <Position>4789;563</Position>
                               <StyleLien>2</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>?</PostAssertion>
@@ -625,7 +625,7 @@ id_Ontologie</PreAssertion>
                               <DetailsVideVisible>0</DetailsVideVisible>
                               <Enfants>
                                 <Action>
-                                  <Position>4588;616</Position>
+                                  <Position>4785;699</Position>
                                   <StyleLien>2</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -634,13 +634,13 @@ id_Ontologie</PreAssertion>
                                   <DetailsVideVisible>0</DetailsVideVisible>
                                   <Enfants>
                                     <Iteration>
-                                      <Position>4674.5;691.5</Position>
+                                      <Position>5027.5;816.5</Position>
                                       <StyleLien>0</StyleLien>
                                       <Titre>pour tous les tags de la question (i)</Titre>
                                       <IterationFixe>1</IterationFixe>
                                       <Enfants>
                                         <Condition>
-                                          <Position>4595.5;785</Position>
+                                          <Position>4948.5;910</Position>
                                           <StyleLien>1</StyleLien>
                                           <estUnique>1</estUnique>
                                           <operationsLogiques>
@@ -648,7 +648,7 @@ id_Ontologie</PreAssertion>
                                               <Titre>i.niveau == niveauActuel</Titre>
                                               <Enfants>
                                                 <ConditionMultiple>
-                                                  <Position>4464.5;851</Position>
+                                                  <Position>4840.5;1036</Position>
                                                   <StyleLien>0</StyleLien>
                                                   <Titre>i</Titre>
                                                   <operationsLogiques>
@@ -656,7 +656,7 @@ id_Ontologie</PreAssertion>
                                                       <Titre>Statut Moyen_1</Titre>
                                                       <Enfants>
                                                         <Action>
-                                                          <Position>4359;932</Position>
+                                                          <Position>4479;1137</Position>
                                                           <StyleLien>1</StyleLien>
                                                           <PreAssertion>?</PreAssertion>
                                                           <PostAssertion>?</PostAssertion>
@@ -671,7 +671,7 @@ id_Ontologie</PreAssertion>
                                                       <Titre>Statut Moyen_2</Titre>
                                                       <Enfants>
                                                         <Action>
-                                                          <Position>4571;930</Position>
+                                                          <Position>4816;1156</Position>
                                                           <StyleLien>1</StyleLien>
                                                           <PreAssertion>?</PreAssertion>
                                                           <PostAssertion>?</PostAssertion>
@@ -686,7 +686,7 @@ id_Ontologie</PreAssertion>
                                                       <Titre>Statut Difficile</Titre>
                                                       <Enfants>
                                                         <Action>
-                                                          <Position>4780;930</Position>
+                                                          <Position>5181;1151</Position>
                                                           <StyleLien>1</StyleLien>
                                                           <PreAssertion>?</PreAssertion>
                                                           <PostAssertion>?</PostAssertion>
@@ -714,7 +714,7 @@ id_Ontologie</PreAssertion>
                               </Enfants>
                             </Action>
                             <Action>
-                              <Position>5231;539</Position>
+                              <Position>5427;571</Position>
                               <StyleLien>2</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>?</PostAssertion>
@@ -723,7 +723,7 @@ id_Ontologie</PreAssertion>
                               <DetailsVideVisible>0</DetailsVideVisible>
                               <Enfants>
                                 <Action>
-                                  <Position>5064;634</Position>
+                                  <Position>5398;703</Position>
                                   <StyleLien>2</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -732,13 +732,13 @@ id_Ontologie</PreAssertion>
                                   <DetailsVideVisible>0</DetailsVideVisible>
                                   <Enfants>
                                     <Iteration>
-                                      <Position>5151.5;703.5</Position>
-                                      <StyleLien>1</StyleLien>
+                                      <Position>5636.5;820.5</Position>
+                                      <StyleLien>0</StyleLien>
                                       <Titre>pour tous les tags du niveauActuel (i)</Titre>
                                       <IterationFixe>1</IterationFixe>
                                       <Enfants>
                                         <Condition>
-                                          <Position>5076.5;795</Position>
+                                          <Position>5472.5;901</Position>
                                           <StyleLien>1</StyleLien>
                                           <estUnique>1</estUnique>
                                           <operationsLogiques>
@@ -746,7 +746,7 @@ id_Ontologie</PreAssertion>
                                               <Titre>ontolgie[niveauActuel][i] != Statut::facile </Titre>
                                               <Enfants>
                                                 <Action>
-                                                  <Position>5070;864</Position>
+                                                  <Position>5530;1010</Position>
                                                   <StyleLien>1</StyleLien>
                                                   <PreAssertion>?</PreAssertion>
                                                   <PostAssertion>?</PostAssertion>
@@ -768,7 +768,7 @@ id_Ontologie</PreAssertion>
                                   </Enfants>
                                 </Action>
                                 <Action>
-                                  <Position>4934;634</Position>
+                                  <Position>5249;703</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -778,7 +778,7 @@ id_Ontologie</PreAssertion>
                                   <Enfants/>
                                 </Action>
                                 <Condition>
-                                  <Position>5413.5;632</Position>
+                                  <Position>5918.5;706</Position>
                                   <StyleLien>1</StyleLien>
                                   <estUnique>1</estUnique>
                                   <operationsLogiques>
@@ -786,7 +786,7 @@ id_Ontologie</PreAssertion>
                                       <Titre>diminuer ? &amp;&amp; niveauActuel != min</Titre>
                                       <Enfants>
                                         <Action>
-                                          <Position>5371;763</Position>
+                                          <Position>5873;839</Position>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>?</PreAssertion>
                                           <PostAssertion>?</PostAssertion>
@@ -796,7 +796,7 @@ id_Ontologie</PreAssertion>
                                           <Enfants/>
                                         </Action>
                                         <Action>
-                                          <Position>5512;762</Position>
+                                          <Position>6060;845</Position>
                                           <StyleLien>1</StyleLien>
                                           <PreAssertion>?</PreAssertion>
                                           <PostAssertion>?</PostAssertion>
@@ -816,7 +816,7 @@ id_Ontologie</PreAssertion>
                               </Enfants>
                             </Action>
                             <Action>
-                              <Position>5802;537</Position>
+                              <Position>6208;572</Position>
                               <StyleLien>2</StyleLien>
                               <PreAssertion>?</PreAssertion>
                               <PostAssertion>?</PostAssertion>
@@ -825,7 +825,7 @@ id_Ontologie</PreAssertion>
                               <DetailsVideVisible>0</DetailsVideVisible>
                               <Enfants>
                                 <Procedure>
-                                  <Position>5832;618</Position>
+                                  <Position>6257;694</Position>
                                   <StyleLien>1</StyleLien>
                                   <PreAssertion>?</PreAssertion>
                                   <PostAssertion>?</PostAssertion>
@@ -906,13 +906,14 @@ id_Ontologie</PreAssertion>
       </Enfants>
     </Action>
     <Sortie>
-      <Position>2401;514</Position>
+      <Position>2442;581</Position>
     </Sortie>
     <Sortie>
-      <Position>4079;694</Position>
+      <Position>4585;817</Position>
     </Sortie>
     <Sortie>
       <Position>6298;517</Position>
     </Sortie>
   </Elements>
+  <Dictionary/>
 </Algorithme>
