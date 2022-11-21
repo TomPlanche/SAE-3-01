@@ -24,7 +24,7 @@
                     </svg>
                     <h2>Déposer une question</h2>
                     <p>Vous pouvez déposer une question dans un dépot auquel vous avez accès.</p>
-                    <button onclick="depot()">Déposer</button>
+                    <button onclick="window.location.href='deposerQuestion.php'">Déposer</button>
                 </section>
                 <section class="entrainement">
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">

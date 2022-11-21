@@ -41,7 +41,7 @@
     -283 -33z"/> </g></svg>
                 <label>E T U D I A N T</label>
                 <!-- Bouton qui envoie sur la page asset/php/connexion.php avec le type etudiant, onclick : envoyer sur connexion.php et mettre le cookie type-->
-                <button onclick="document.location.href='./assets/php/cookie.php?type=etudiant'">Connexion</button>
+                <button onclick="document.location.href='./assets/php/connexion.php?type=etudiant'">Connexion</button>
             </div>
 
             <br>
@@ -90,7 +90,7 @@
                 </svg>
                 <label>P R O F E S S E U R</label>
                 <!-- Bouton qui envoie sur la page asset/php/connexion.php avec le type professeur -->
-                <button type="button" onclick="window.location.href='assets/php/cookie.php?type=enseignant'">Connexion</button>
+                <button type="button" onclick="window.location.href='./assets/php/connexion.php?type=enseignant'">Connexion</button>
 
             </div>
             <br>
@@ -164,10 +164,11 @@
                 </svg>
                 <label>A D M I N</label>
                 <!-- Bouton qui envoie sur la page asset/php/connexion.php avec le type ADMIN -->
-                <button type="button" onclick="window.location.href='assets/php/cookie.php?type=admin'">Connexion</button>
+                <button type="button" onclick="window.location.href='./assets/php/connexion.php?type=admin'">Connexion</button>
             </div>
         </div>
     </main>
+
 </body>
 
 

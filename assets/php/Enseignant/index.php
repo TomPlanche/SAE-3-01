@@ -7,7 +7,10 @@
 
     <body>
         <!-- Inclure la template header -->
-        <?php include '../../template/header.php'; ?>
+        <?php include '../../template/header.php';
+
+        session_start();
+        ?>
 
     <main>
         <section class="GererDepot">
@@ -31,7 +34,7 @@
                     $requete = "SELECT * FROM DEPOT WHERE id_enseignant = :idEnseignant";
                     $stmt = $db->prepare($requete);
                     #On récupère l'id de l'enseignant dans les cookies
-                    $stmt->bindParam(':idEnseignant', $_COOKIE['enseignant']);
+                    $stmt->bindParam(':idEnseignant', $_SESSION['idEnseignant']);
                     #On affiche l'id de l'enseignant dans les cookies
 
                     $stmt->execute();
@@ -87,7 +90,7 @@
                     $requete = "SELECT * FROM QCM WHERE id_enseignant = :idEnseignant";
                     $stmt = $db->prepare($requete);
                     #On récupère l'id de l'enseignant dans les cookies
-                    $stmt->bindParam(':idEnseignant', $_COOKIE['enseignant']);
+                    $stmt->bindParam(':idEnseignant', $_SESSION['idEnseignant']);
                     #On affiche l'id de l'enseignant dans les cookies
 
                     $stmt->execute();

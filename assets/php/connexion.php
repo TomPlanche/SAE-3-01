@@ -1,5 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+
+
+    session_start();
+    if(isset($_GET['type'] )){
+        if ($_GET['type'] == 'etudiant'){
+            $_SESSION['type'] = 'etudiant';
+
+        }
+        else if ($_GET['type'] == 'enseignant'){
+            $_SESSION['type'] = 'enseignant';
+        }else{
+            $_SESSION['type'] = 'admin';
+        }
+    }
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +36,7 @@
 
     <main>
         <section>
-            <h1>Se connecter en tant que <?php echo $_COOKIE['type']; ?></h1>
+            <h1>Se connecter en tant que <?php echo $_SESSION['type']; ?></h1>
             <form>
                 <!-- Login et mdp -->
                 <label for="login">Login</label>
@@ -31,7 +48,7 @@
                 if(isset($_GET['seConnecter'])){
 
                     #Récupération du cookie type
-                    $type = $_COOKIE['type'];
+                    $type = $_SESSION['type'];
 
                     #Récupération des données du formulaire
                     $login = $_GET['login'];
@@ -50,8 +67,7 @@
                             $enseignant = $result->fetchAll(PDO::FETCH_ASSOC);
                             if ($enseignant){
                                 echo "Connexion réussie";
-                                #Création du cookie enseignant avec l'id de l'enseignant
-                                setcookie('enseignant', $enseignant[0]['id_enseignant'], time() + 3600, null, null, false, true);
+                                $_SESSION['idEnseignant'] = $enseignant[0]['id_enseignant'];
                                 header("Refresh:1; url=./Enseignant/index.php");
                             }else{
                                 echo "Mauvais login ou mot de passe";
@@ -67,7 +83,7 @@
                             if ($etudiant){
                                 echo "Connexion réussie";
                                 #Création du cookie étudiant avec l'id de l'étudiant
-                                setcookie('etudiant', $etudiant[0]['id_etudiant'], time() + 3600, null, null, false, true);
+                                $_SESSION['idEtudiant'] = $etudiant[0]['id_etudiant'];
                                 header("Refresh:1; url=./Etudiant/index.php");
                             }else{
                                 echo "Mauvais login ou mot de passe";
