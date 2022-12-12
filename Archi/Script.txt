@@ -1,0 +1,82 @@
+CREATE TABLE Playlist(
+    id VARCHAR(50),
+    name VARCHAR(50),
+
+ PRIMARY KEY(id)
+);
+
+CREATE TABLE Musiques(
+    id VARCHAR(50),
+    name VARCHAR(50),
+    artist VARCHAR(50),
+    duration VARCHAR(50),
+
+ PRIMARY KEY(id)
+);
+
+CREATE TABLE Users(
+    id VARCHAR(50),
+    name VARCHAR(50),
+    email VARCHAR(50),
+    password VARCHAR(50),
+
+  playlist_id VARCHAR(50) NOT NULL,
+  PRIMARY KEY(id),
+  FOREIGN KEY(playlist_id) REFERENCES Playlist(id)
+);
+
+CREATE TABLE contenir(
+     playlist_id VARCHAR(50),
+     user_id VARCHAR(50),
+
+ PRIMARY KEY(playlist_id, user_id),
+ FOREIGN KEY(playlist_id) REFERENCES Playlist(id),
+ FOREIGN KEY(user_id) REFERENCES Musiques(id)
+);
+
+-- Insérer toutes les musiques de Aznavour
+INSERT INTO Musiques(id, name, artist, duration) VALUES
+('1', 'La Bohème', 'Aznavour', '3:30'),
+('2', 'La Mamma', 'Aznavour', '3:30');
+
+-- Insérer toutes les musiques de Brel
+INSERT INTO Musiques(id, name, artist,  duration) VALUES
+('3', 'Ne me quitte pas', 'Brel', '3:30'),
+('4', 'Le plat pays', 'Brel', '3:30'),
+('5', 'Les Bourgeois', 'Brel',  '3:30'),
+('6', 'Le Moribond', 'Brel',  '3:30'),
+('7', 'Le Vieux', 'Brel', '3:30'),
+('8', 'La Chanson des vieux amants', 'Brel', '3:30');
+
+
+-- Insérer toutes les musiques de Brassens
+INSERT INTO Musiques(id, name, artist,  duration) VALUES
+('9', 'La mauvaise réputation', 'Brassens', '3:30'),
+('10', 'La non demande en mariage', 'Brassens', '3:30'),
+('11', 'La complainte de la butte', 'Brassens', '3:30');
+
+-- Insérer une playlist
+INSERT INTO Playlist(id, name) VALUES
+('1', 'Chansons françaises Aznavour'),
+('2', 'Chansons françaises Brel'),
+('3', 'Chansons françaises Brassens');
+
+-- Insérer un utilisateur
+INSERT INTO Users(id, name, email, password, playlist_id) VALUES
+('1', 'Mathis', 'Heriveau', 'mheriveau@iutbayonne.univ-pau.fr', '1'),
+('2', 'Tom', 'Planche', 'tplanche001@iutbayonne.univ-pau.fr', '2'),
+('3', 'Tom', 'Montbord', 'tmonbord@iutbayonne.univ-pau.fr', '3');
+
+-- Insérer les musiques dans les playlists
+INSERT INTO contenir(playlist_id, user_id) VALUES
+('1', '1'),
+('1', '2'),
+('2', '3'),
+('2', '4'),
+('2', '5'),
+('2', '6'),
+('2', '7'),
+('2', '8'),
+('3', '9'),
+('3', '10'),
+('3', '11');
