@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet/less" type="text/css" href="./assets/scss/style.scss"/>
+        <link rel="stylesheet/less" type="text/css" href="style.scss"/>
         <script src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
         <title>Auto-QCM</title>
     </head>
