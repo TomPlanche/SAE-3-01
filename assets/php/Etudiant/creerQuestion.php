@@ -44,7 +44,7 @@
 
                     #Recherche des tags
                     echo "<input type='text' id='ajoutTag' name='ajoutTag' placeholder='Rechercher un tag' onkeyup='rechercheTags()'>";
-                    echo "<ul id='listeTagsRecherche'></ul>";
+                    echo "<ul id='listeTagsRecherche' display='block'></ul>";
 
                     echo "<label name='Erreur' id='Erreur'></label>";
 
@@ -137,8 +137,19 @@
             </form>
 
             <?php
+
             // Si on a cliqué sur le bouton suivant et que la liste des tags choisis n'est pas vide
             if(isset($_POST['Suivant1']) && $_POST['tags'] != ''){
+                // On récupère les données du formulaire
+                $tagsArray = explode(',', $_POST['tags']);
+                // On le stocke dans une variable de session
+                $_SESSION['tags'] = $tagsArray;
+                // On récupère le type de question
+                $typeQuestion = $_POST['typeQuestion'];
+                // On le stocke dans une variable de session
+                $_SESSION['typeQuestion'] = $typeQuestion;
+
+
                 // Suppression du form et affichage du form suivant
                 echo "<script>document.forms['choixTypeQuestion'].style.display = 'none';</script>";
                 // Affichage du form suivant
@@ -161,10 +172,12 @@
                     echo    "</div>";
                     echo "</div>";
                 }
+
                 else if($_POST['typeQuestion'] == "Vrai ou faux") {
                     echo "<label for='reponse'>Saisissez votre réponse</label>";
                     echo "<input type='text' name='reponse' id='reponse' placeholder='Saisissez votre réponse'>";
                 }
+
                 else if($_POST['typeQuestion'] == "Réponse courte") {
                     echo "<label for='reponse'>Saisissez votre réponse</label>";
                     echo "<input type='text' name='reponse' id='reponse' placeholder='Saisissez votre réponse'>";
@@ -192,7 +205,7 @@
                         // Ajouter une réponse
                         var div = document.createElement('div');
                         div.className = 'uneReponse';
-                        div.innerHTML = '<input type=\"checkbox\" name=\"reponse[]\" id=\"reponse\" value=\"reponse\"> <input type=\"text\" name=\"reponse[]\" id=\"reponse\" placeholder=\"Saisissez votre réponse\"> <boutton class=\"btn\" type=\"button\" name=\"ajoutReponse\" id=\"ajoutReponse\" onclick=\"ajoutReponse(this)\">Add</boutton> <boutton class=\"btn\" type=\"button\" name=\"suppReponse\" id=\"suppReponse\" onclick=\"suppReponse(this)\">Supp</boutton>';
+                        div.innerHTML = '<input type=\"checkbox\" name=\"uneReponse\" id=\"reponse\" value=\"reponse\"> <input type=\"text\" name=\"reponse[]\" id=\"reponse\" placeholder=\"Saisissez votre réponse\"> <boutton class=\"btn\" type=\"button\" name=\"ajoutReponse\" id=\"ajoutReponse\" onclick=\"ajoutReponse(this)\">Add</boutton> <boutton class=\"btn\" type=\"button\" name=\"suppReponse\" id=\"suppReponse\" onclick=\"suppReponse(this)\">Supp</boutton>';
                         document.getElementsByClassName('choixMultiple')[0].appendChild(div);
                     }
                 }
@@ -206,8 +219,10 @@
                         divReponse[divReponse.length-1].remove();
                     }
                 }
+
                 
                 </script>";
+
 
 
 
@@ -218,7 +233,24 @@
             }
 
 
+
             if (isset($_POST['Suivant2']) && !empty($_POST['question']) && !empty($_POST['reponse']) && !empty($_POST['difficulte'])) {
+                // Récupération des réponses ayant été cochées
+                $reponses = array();
+                if(isset($_POST['reponse'])){
+                    foreach($_POST['reponse'] as $reponse){
+                        if($reponse != 'reponse'){
+                            array_push($reponses, $reponse);
+                        }
+                    }
+                }
+                // Ajout dans une variable de session
+                $_SESSION['reponses'] = $reponses;;
+                // Ajout dans une variable de session
+                $_SESSION['question'] = $_POST['question'];
+                // Ajout dans une variable de session
+                $_SESSION['difficulte'] = $_POST['difficulte'];
+
 
                 // Suppression des 2 forms et affichage du form suivant
                 echo "<script>document.forms['choixTypeQuestion'].style.display = 'none';</script>";
@@ -228,17 +260,135 @@
                 echo "<form method='post' name='recap'>";
                 echo "<h3>Récapitulatif</h3>";
                 echo "<p>Titre du dépôt : ".$_GET['titreDepot']."</p>";
-                echo "<p>Tags : ".$_POST['ajoutTag']."</p>";
-                echo "<p>Type de question : ".$_POST['typeQuestion']."</p>";
+                echo "<p>Tags choisis : ";
+                foreach ($_SESSION['tags'] as $tag) {
+                    echo $tag.", ";
+                }
+                echo "</p>";
+                echo "<p>Type de question : ".$_SESSION['typeQuestion']."</p>";
                 echo "<p>Question : ".$_POST['question']."</p>";
-                echo "<p>Réponse : ".$_POST['reponse']."</p>";
-                echo "<p>Difficulté : ".$_POST['difficulte']."</p>";
-                echo "<button class='btn' type='submit' name='Suivant3' >Suivant</button>";
+                // Afficher toute les réponses
+                echo "<p>Réponses : ";
+                echo "<ul>";
+                foreach ($_SESSION['reponses'] as $reponse) {
+                    echo "<li>".$reponse."</li>";
+                }
+                // Récupére la sessions['reponses'][0] et l'affiche
+
+                echo "</ul>";
+                echo "<p>Difficulté : ";
+                switch ($_POST['difficulte']) {
+                    case 1:
+                        echo "Facile";
+                        break;
+                    case 2:
+                        echo "Moyen";
+                        break;
+                    case 3:
+                        echo "Difficile";
+                        break;
+                }
+                echo "</p>";
+                // Afficher tous ce qui a été ajouté dans la variable de session
+                echo "<h1>Variable de session</h1>";
+                foreach ($_SESSION as $key => $value) {
+                    // si c'est une liste
+                    if (is_array($value)) {
+                        echo "<p>".$key." : ";
+                        echo "<ul>";
+                        if (is_array($value)) {
+                            foreach ($value as $key2 => $value2) {
+                                echo "<li>".$value2."</li>";
+                            }
+                        }
+                        else{
+                            foreach ($value as $valeur) {
+                                echo "<li>".$valeur."</li>";
+                            }
+                        }
+
+                        echo "</ul>";
+                        echo "</p>";
+                    }else{
+                        echo "<p>".$key." : ".$value."</p>";
+                    }
+                }
+                echo "<h1>-----------</h1>";
+
+                echo "<button class='btn' type='submit' name='envoyer' >Envoyer</button>";
+                echo "<button class='btn' type='submit' name='retour' >Retour</button>";
                 echo "</form>";
 
             }else if(isset($_POST['Suivant2']) && (empty($_POST['question']) || empty($_POST['reponse']) || empty($_POST['difficulte']))){
                 echo "<script>alert('Veuillez remplir tous les champs');</script>";
 
+            }
+
+            if (isset($_POST['envoyer'])) {
+                // Ajout de la question dans la base de données
+                $question = $_POST['question'];
+                $reponses = $_POST['reponse'];
+                $difficulte = $_POST['difficulte'];
+                $typeQuestion = $_SESSION['typeQuestion'];
+                $idDepot = $_SESSION['idDepot'];
+                $idEtudiant = $_SESSION['idEtudiant'];
+
+                // Connexion à la base de données
+                $FICHIER_BD = "../../../BDs/BD";
+                $db = new PDO('sqlite:'.$FICHIER_BD);
+                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                // Ajout de la question : id_question, etat_question, titre_question, id_type,difficulte, id_etudiant, id_depot
+                $db->exec("INSERT INTO question (etat_question, titre_question, id_type, difficulte, id_etudiant, id_depot) VALUES ('En attente', '$question', '$typeQuestion', '$difficulte', '$idEtudiant', '$idDepot')");
+                // Récupération de l'id de la question
+                $idQuestion = $db->lastInsertId();
+
+                // Ajout des réponses : si elle existe déjà, on récupère son id sinon on l'ajoute
+                // pour chaque réponse
+                foreach ($reponses as $reponse) {
+                    // Vérifier si la réponse existe déjà
+                    $result = $db->query("SELECT * FROM reponse WHERE label_reponse = '$reponse'");
+                    $result = $result->fetch();
+                    if ($result) {
+
+                    }else{
+                        // Ajout de la réponse : id_reponse, titre_reponse
+                        $db->exec("INSERT INTO reponse (label_reponse) VALUES ('$reponse')");
+                        // Récupération de l'id de la réponse
+                        $idReponse = $db->lastInsertId();
+                        // ajout dans la table question_a_reponse l'id de la question et l'id de la réponse et son etat (correcte/fausse)
+                    }
+                    if ($reponse == $reponses[0]) {
+                        $db->exec("INSERT INTO question_a_reponse (id_question, id_reponse, etat_veritee) VALUES ('$idQuestion', '$idReponse', 'Fausse')");
+                    }else{
+                        $db->exec("INSERT INTO question_a_reponse (id_question, id_reponse, etat_veritee) VALUES ('$idQuestion', '$idReponse', 'Correcte')");
+                    }
+                }
+
+                // lier les tags à la question tag_lie_a_question : id_question et nom_tag
+                foreach ($_SESSION['tags'] as $tag) {
+                    $db->exec("INSERT INTO tag_lie_a_question (id_question, nom_tag) VALUES ('$idQuestion', '$tag')");
+                }
+
+
+
+
+
+                // Suppression des variables de session
+                unset($_SESSION['tags']);
+                unset($_SESSION['typeQuestion']);
+                unset($_SESSION['idDepot']);
+
+                // Redirection vers la page d'accueil
+                header('Location: accueil.php');
+            }
+
+            if (isset($_POST['retour'])) {
+                // Affichage du form précédent
+                echo "<script>document.forms['choixTypeQuestion'].style.display = 'none';</script>";
+                echo "<script>document.forms['choixQuestion'].style.display = 'block';</script>";
+                // Suppression du form récap
+                echo "<script>document.forms['recap'].style.display = 'none';</script>";
             }
 
 

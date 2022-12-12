@@ -5,7 +5,7 @@ CREATE TABLE Playlist(
  PRIMARY KEY(id)
 );
 
-CREATE TABLE Musiques(
+CREATE TABLE Musique(
     id VARCHAR(50),
     name VARCHAR(50),
     artist VARCHAR(50),
@@ -14,7 +14,7 @@ CREATE TABLE Musiques(
  PRIMARY KEY(id)
 );
 
-CREATE TABLE Users(
+CREATE TABLE User(
     id VARCHAR(50),
     name VARCHAR(50),
     email VARCHAR(50),
@@ -63,9 +63,9 @@ INSERT INTO Playlist(id, name) VALUES
 
 -- Insérer un utilisateur
 INSERT INTO Users(id, name, email, password, playlist_id) VALUES
-('1', 'Mathis', 'Heriveau', 'mheriveau@iutbayonne.univ-pau.fr', '1'),
-('2', 'Tom', 'Planche', 'tplanche001@iutbayonne.univ-pau.fr', '2'),
-('3', 'Tom', 'Montbord', 'tmonbord@iutbayonne.univ-pau.fr', '3');
+('1', 'Mathis', 'mheriveau@iutbayonne.univ-pau.fr', 'Heriveau', '1'),
+('2', 'Tom', 'tplanche001@iutbayonne.univ-pau.fr', 'Planche', '2'),
+('3', 'Tom', 'tmonbord@iutbayonne.univ-pau.fr', 'Montbord', '3');
 
 -- Insérer les musiques dans les playlists
 INSERT INTO contenir(playlist_id, user_id) VALUES

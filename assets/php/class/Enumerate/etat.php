@@ -1,8 +1,8 @@
 <?php
 
-enum etat
+enum Etat
 {
-    const aVerifier = 1;
-    const aModifier = 2;
-    const valide = 3;
+    const AVerifier = 1;
+    const AModifier = 2;
+    const Valide = 3;
 }

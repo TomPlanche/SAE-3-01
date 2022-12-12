@@ -7,8 +7,10 @@
 <body>
     <!-- Inclure la template header -->
     <?php include '../../template/header.php';
-
     session_start();
+    include '../estConnecte.php';
+
+
     ?>
 
 <main>
@@ -42,7 +44,7 @@
                     $dateFermeture = date("d/m/Y", strtotime($depot['date_fermeture']));
                     echo "<p>Date de fermeture : ".$dateFermeture."</p>";
                     // Bouton qui envoie vers la page creerQuestion.php avec comme parametre l'id du depot et le titre du depot
-                    echo "<button class='btn' onclick='window.location.href = \"creerQuestion.php?idDepot=".$depot['idDepot']."&titreDepot=".$depot['titre']."\"'>Créer une question</button>";
+                    echo "<button class='btn' onclick='window.location.href = \"creerQuestion2Type.php?idDepot=".$depot['idDepot']."&titreDepot=".$depot['titre']."\"'>Créer une question</button>";
                     echo "</div>";
                 }
 

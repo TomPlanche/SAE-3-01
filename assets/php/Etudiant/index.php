@@ -7,7 +7,18 @@
 
 <body>
     <!-- Inclure la template header -->
-    <?php include '../../template/header.php'; ?>
+    <?php include '../../template/header.php';
+    session_start();
+        include '../estConnecte.php';
+        // Supprimer les variables de session : tags, typeQuestion, question, reponse, difficulte
+        unset($_SESSION['tags']);
+        unset($_SESSION['typeQuestion']);
+        unset($_SESSION['question']);
+        unset($_SESSION['reponses']);
+        unset($_SESSION['difficulte']);
+
+
+    ?>
 
     <main>
         <!--

@@ -99,7 +99,7 @@ class question
         $listeReponses = $this->mesReponses;
         foreach ($listeReponses as $uneReponse)
         {
-            if ($uneReponse->getCorrecte() == 1)
+            if ($uneReponse->getEstCorrecte() == 1)
             {
                 $listeReponses += $uneReponse;
             }

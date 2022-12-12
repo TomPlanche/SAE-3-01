@@ -2,50 +2,42 @@
 <head>
     <!-- Title -->
     <title>Site de playlist</title>
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/album.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="navbar navbar-dark bg-dark shadow-sm">
-            <div class="container d-flex justify-content-between">
-                <a href="index.php" class="navbar-brand d-flex align-items-center">
-                    <strong>Playlist</strong>
-                </a>
-            </div>
-        </div>
+        <a href="index.php">
+            <strong>Site de playlist</strong>
+        </a>
     </header>
-    <!-- Main -->
-    <main role="main">
-        <section class="jumbotron text-center">
-            <div class="container">
-                <h1 class="jumbotron-heading">Playlist</h1>
-                <p class="lead text-muted">Créer une playlist</p>
-                <p>
-                    <a href="create.php" class="btn btn-primary my-2">Créer</a>
-                    <a href="read.php" class="btn btn-secondary my-2">Lire</a>
-                </p>
-            </div>
-        </section>
-    </main>
-    <!-- Footer -->
-    <footer class="text-muted">
+    <main>
+        <p>
+            Ce site permet d'afficher des playlists de musique en fonction de l'utilisateur sélectionné.<br>
+            Sélectionnez un utilisateur dans la liste ci-dessous pour afficher sa playlist.
+        </p>
         <div class="container">
-            <p class="float-right">
-                <a href="#">Back to top</a>
-            </p>
-            <p>Playlist</p>
+            <form action="playlist.php" method="post">
+                <label for="name">Utilisateur</label>
+                <?php
+                $path = "../BD";
+                $db = new PDO("sqlite:$path");
+                $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $query = "SELECT * FROM Users";
+                $result = $db->query($query);
+                echo "<select name='name'>";
+                foreach ($result as $row) {
+                    echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
+                }
+                echo "</select>";
+
+
+                ?>
+                <input type="submit" class="btn btn-primary" value="Playlist">
+            </form>
+
         </div>
-    </footer>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    </main>
 </body>
 
 </html>

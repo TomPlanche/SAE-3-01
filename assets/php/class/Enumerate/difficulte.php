@@ -1,6 +1,6 @@
 <?php
 
-enum difficulte
+enum Difficulte
 {
     const Facile = 1;
     const Moyen = 2;
